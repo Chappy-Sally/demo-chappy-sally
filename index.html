@@ -1,0 +1,233 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">
+
+  <meta
+    name="viewport"
+    content="width=device-width, initial-scale=1, viewport-fit=cover"
+  >
+
+  <title>チャッピー＆サリー｜デモンストレーション</title>
+
+  <meta
+    name="description"
+    content="チャッピー＆サリーのアプリをご紹介するためのデモンストレーションページです。"
+  >
+
+  <style>
+    * {
+      box-sizing: border-box;
+    }
+
+    body {
+      margin: 0;
+      min-height: 100vh;
+      font-family:
+        "Hiragino Kaku Gothic ProN",
+        "Yu Gothic",
+        sans-serif;
+      color: #6b4a3a;
+      background:
+        linear-gradient(
+          180deg,
+          #fffaf5 0%,
+          #fff5ee 50%,
+          #f8f5ff 100%
+        );
+    }
+
+    .app {
+      width: 100%;
+      max-width: 720px;
+      margin: 0 auto;
+      padding:
+        calc(24px + env(safe-area-inset-top))
+        18px
+        calc(32px + env(safe-area-inset-bottom));
+    }
+
+    .main-card {
+      background: rgba(255, 255, 255, 0.92);
+      border-radius: 28px;
+      padding: 28px 20px;
+      box-shadow:
+        0 10px 30px rgba(120, 90, 70, 0.10);
+    }
+
+    h1 {
+      margin: 0;
+      text-align: center;
+      font-size: 1.65rem;
+      line-height: 1.6;
+      color: #76503d;
+    }
+
+    .lead {
+      margin: 18px 0 26px;
+      text-align: center;
+      line-height: 1.9;
+      font-size: 0.98rem;
+    }
+
+    .demo-list {
+      display: grid;
+      gap: 16px;
+    }
+
+    .demo-button {
+      display: block;
+      width: 100%;
+      padding: 20px 16px;
+      border-radius: 22px;
+      text-decoration: none;
+      text-align: center;
+      font-weight: bold;
+      font-size: 1.05rem;
+      line-height: 1.6;
+      color: #6b4537;
+      background: #fff2d9;
+      border: 2px solid #f4d6a1;
+      box-shadow:
+        0 5px 14px rgba(110, 80, 60, 0.08);
+      transition:
+        transform 0.2s ease,
+        box-shadow 0.2s ease;
+    }
+
+    .demo-button:nth-child(2) {
+      background: #eaf7ed;
+      border-color: #bee2c5;
+    }
+
+    .demo-button:nth-child(3) {
+      background: #f1ecff;
+      border-color: #d3c6f5;
+    }
+
+    .demo-button:active {
+      transform: scale(0.98);
+      box-shadow:
+        0 2px 8px rgba(110, 80, 60, 0.08);
+    }
+
+    .demo-title {
+      display: block;
+      font-size: 1.12rem;
+    }
+
+    .demo-sub {
+      display: block;
+      margin-top: 5px;
+      font-size: 0.86rem;
+      font-weight: normal;
+      color: #806d64;
+    }
+
+    .note {
+      margin-top: 26px;
+      padding: 16px;
+      border-radius: 18px;
+      background: #fffaf0;
+      line-height: 1.8;
+      font-size: 0.88rem;
+      text-align: center;
+    }
+
+    footer {
+      margin-top: 24px;
+      text-align: center;
+      font-size: 0.78rem;
+      color: #9a8980;
+    }
+
+    @media (min-width: 600px) {
+      .main-card {
+        padding: 36px 32px;
+      }
+
+      h1 {
+        font-size: 1.9rem;
+      }
+    }
+  </style>
+</head>
+
+<body>
+
+  <div class="app">
+
+    <main class="main-card">
+
+      <h1>
+        🐶 チャッピー＆サリーの<br>
+        デモンストレーション🌿
+      </h1>
+
+      <p class="lead">
+        チャッピー＆サリーのアプリが<br>
+        どんなものなのか、少しだけご紹介します😊<br><br>
+
+        気になるデモをタップして<br>
+        ご覧ください✨
+      </p>
+
+      <div class="demo-list">
+
+        <a
+          href="demo1.html"
+          class="demo-button"
+        >
+          <span class="demo-title">
+            🌿 私にもどる対話ナビ
+          </span>
+
+          <span class="demo-sub">
+            自分の気持ちにやさしく気づく時間
+          </span>
+        </a>
+
+        <a
+          href="demo2.html"
+          class="demo-button"
+        >
+          <span class="demo-title">
+            🐶 安心にもどるナビ
+          </span>
+
+          <span class="demo-sub">
+            モヤモヤや不安を一緒にひもとく時間
+          </span>
+        </a>
+
+        <a
+          href="demo3.html"
+          class="demo-button"
+        >
+          <span class="demo-title">
+            🌈 安心にもどるセット
+          </span>
+
+          <span class="demo-sub">
+            アプリとチャッピーGPTをまとめてご紹介
+          </span>
+        </a>
+
+      </div>
+
+      <div class="note">
+        このページは、ご紹介用のデモンストレーションです。<br>
+        実際の商品内容の一部を、
+        わかりやすくご紹介しています😊
+      </div>
+
+    </main>
+
+    <footer>
+      Chappy & Sally 🌿
+    </footer>
+
+  </div>
+
+</body>
+</html>
