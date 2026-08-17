@@ -1,0 +1,344 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">
+
+  <meta
+    name="viewport"
+    content="width=device-width, initial-scale=1, viewport-fit=cover"
+  >
+
+  <title>私にもどる対話ナビ｜デモ</title>
+
+  <meta
+    name="description"
+    content="チャッピー＆サリーの「私にもどる対話ナビ」の紹介用デモページです。"
+  >
+
+  <style>
+    * {
+      box-sizing: border-box;
+    }
+
+    html {
+      scroll-behavior: smooth;
+    }
+
+    body {
+      margin: 0;
+      min-height: 100vh;
+      font-family:
+        "Hiragino Kaku Gothic ProN",
+        "Yu Gothic",
+        sans-serif;
+      color: #654c40;
+      background:
+        linear-gradient(
+          180deg,
+          #fffaf5 0%,
+          #f7fff8 50%,
+          #fffaf5 100%
+        );
+    }
+
+    .app {
+      width: 100%;
+      max-width: 720px;
+      margin: 0 auto;
+      padding:
+        calc(20px + env(safe-area-inset-top))
+        16px
+        calc(36px + env(safe-area-inset-bottom));
+    }
+
+    .back {
+      display: inline-block;
+      margin-bottom: 14px;
+      padding: 9px 15px;
+      border-radius: 999px;
+      color: #6d594e;
+      background: #ffffff;
+      text-decoration: none;
+      font-size: 0.9rem;
+      box-shadow:
+        0 4px 12px rgba(80, 60, 40, 0.08);
+    }
+
+    .main-card {
+      background: rgba(255, 255, 255, 0.94);
+      border-radius: 28px;
+      padding: 26px 18px 30px;
+      box-shadow:
+        0 10px 30px rgba(80, 70, 50, 0.10);
+    }
+
+    h1 {
+      margin: 0;
+      text-align: center;
+      font-size: 1.55rem;
+      line-height: 1.6;
+      color: #6b513e;
+    }
+
+    .lead {
+      margin: 16px 0 24px;
+      text-align: center;
+      font-size: 0.96rem;
+      line-height: 1.9;
+    }
+
+    .demo-note {
+      margin-bottom: 26px;
+      padding: 15px;
+      border-radius: 18px;
+      background: #f2fbf3;
+      border: 1px solid #d3ecd7;
+      text-align: center;
+      font-size: 0.88rem;
+      line-height: 1.8;
+    }
+
+    .step {
+      margin-top: 26px;
+    }
+
+    .step:first-of-type {
+      margin-top: 0;
+    }
+
+    .step-label {
+      display: inline-block;
+      margin-bottom: 8px;
+      padding: 6px 12px;
+      border-radius: 999px;
+      background: #e9f6eb;
+      color: #52705a;
+      font-size: 0.78rem;
+      font-weight: bold;
+    }
+
+    .step h2 {
+      margin: 0 0 8px;
+      font-size: 1.08rem;
+      line-height: 1.6;
+      color: #675247;
+    }
+
+    .step p {
+      margin: 0 0 14px;
+      font-size: 0.92rem;
+      line-height: 1.8;
+    }
+
+    .screen {
+      width: 100%;
+      overflow: hidden;
+      border-radius: 20px;
+      background: #f6f3ef;
+      border: 1px solid #eadfd7;
+      box-shadow:
+        0 5px 18px rgba(80, 60, 40, 0.09);
+    }
+
+    .screen img {
+      display: block;
+      width: 100%;
+      height: auto;
+    }
+
+    .divider {
+      width: 70px;
+      height: 2px;
+      margin: 30px auto;
+      border: 0;
+      background: #e5d7cc;
+    }
+
+    .message-box {
+      margin-top: 30px;
+      padding: 20px 16px;
+      border-radius: 22px;
+      background:
+        linear-gradient(
+          135deg,
+          #fff7e8,
+          #f2faef
+        );
+      text-align: center;
+      line-height: 1.9;
+      font-size: 0.94rem;
+    }
+
+    .back-button {
+      display: block;
+      width: 100%;
+      margin-top: 24px;
+      padding: 16px;
+      border-radius: 20px;
+      text-align: center;
+      text-decoration: none;
+      font-weight: bold;
+      color: #654d3f;
+      background: #fff0d5;
+      border: 2px solid #edd1a1;
+    }
+
+    footer {
+      margin-top: 22px;
+      text-align: center;
+      color: #9a8980;
+      font-size: 0.78rem;
+    }
+
+    @media (min-width: 600px) {
+      .main-card {
+        padding: 34px 30px;
+      }
+
+      h1 {
+        font-size: 1.8rem;
+      }
+    }
+  </style>
+</head>
+
+<body>
+
+  <div class="app">
+
+    <a href="index.html" class="back">
+      ← デモメニューにもどる
+    </a>
+
+    <main class="main-card">
+
+      <h1>
+        🌿 私にもどる対話ナビ<br>
+        デモンストレーション
+      </h1>
+
+      <p class="lead">
+        モヤモヤしたときや、<br>
+        自分の気持ちがわからなくなったときに。<br><br>
+
+        質問に答えながら、<br>
+        今の自分の気持ちをやさしく整理していくナビです😊
+      </p>
+
+      <div class="demo-note">
+        🌱 こちらは紹介用デモです。<br>
+        実際の商品画面の一部を掲載しています。
+      </div>
+
+
+      <!-- STEP 1 -->
+      <section class="step">
+
+        <span class="step-label">
+          STEP 1
+        </span>
+
+        <h2>
+          今の気持ちに気づく
+        </h2>
+
+        <p>
+          まずは「今、どんな気持ち？」からスタート。<br>
+          答えを出そうとせず、
+          今の自分をそのまま見ていきます🌿
+        </p>
+
+        <div class="screen">
+          <img
+            src="images/demo/watashi-01.png"
+            alt="私にもどる対話ナビ デモ画面1"
+          >
+        </div>
+
+      </section>
+
+
+      <hr class="divider">
+
+
+      <!-- STEP 2 -->
+      <section class="step">
+
+        <span class="step-label">
+          STEP 2
+        </span>
+
+        <h2>
+          質問に答えて、少しずつ整理する
+        </h2>
+
+        <p>
+          「本当はどうしたかった？」などの質問を通して、
+          自分でも気づかなかった気持ちを
+          やさしく見つけていきます😊
+        </p>
+
+        <div class="screen">
+          <img
+            src="images/demo/watashi-02.png"
+            alt="私にもどる対話ナビ デモ画面2"
+          >
+        </div>
+
+      </section>
+
+
+      <hr class="divider">
+
+
+      <!-- STEP 3 -->
+      <section class="step">
+
+        <span class="step-label">
+          STEP 3
+        </span>
+
+        <h2>
+          チャッピーGPTと一緒にひもとく
+        </h2>
+
+        <p>
+          入力した内容をもとに、
+          チャッピーGPTと一緒に
+          自分の気持ちを整理していきます🐶🌈
+        </p>
+
+        <div class="screen">
+          <img
+            src="images/demo/watashi-gpt-01.png"
+            alt="チャッピーGPT 会話サンプル"
+          >
+        </div>
+
+      </section>
+
+
+      <div class="message-box">
+        答えを決めつけたり、<br>
+        無理に前向きになるためのものではありません🌿
+        <br><br>
+        「私は本当はどう感じているんだろう？」
+        と自分に戻りながら、
+        安心できる場所を一緒に見つけていくためのナビです😊
+      </div>
+
+
+      <a href="index.html" class="back-button">
+        🐶 他のデモを見る
+      </a>
+
+    </main>
+
+    <footer>
+      Chappy & Sally 🌿
+    </footer>
+
+  </div>
+
+</body>
+</html>
