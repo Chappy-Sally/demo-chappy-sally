@@ -153,6 +153,14 @@
         );
     }
 
+   /* デモ用：見た目はそのままで押せない */
+.demo-stop{
+  pointer-events:none;
+  opacity:1;
+  cursor:default;
+}
+
+    
     .note{
       width:94%;
       max-width:540px;
@@ -279,6 +287,26 @@
       </div>
 
     </div>
+<button
+  class="main-button btn-copy demo-stop"
+  type="button"
+>
+  🐶 チャッピーGPTに送る文章をコピー
+</button>
+
+<button
+  class="main-button btn-gpt demo-stop"
+  type="button"
+>
+  🐾 チャッピーGPTを開く
+</button>
+
+<button
+  class="main-button btn-reset demo-stop"
+  type="button"
+>
+  もう一度やってみる
+</button>
 
     <button
       class="main-button btn-home"
