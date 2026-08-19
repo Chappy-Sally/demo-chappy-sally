@@ -1,0 +1,622 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">
+
+  <meta
+    name="viewport"
+    content="width=device-width, initial-scale=1.0"
+  >
+
+  <title>私のマイルールを見てみよう</title>
+
+  <style>
+    *{
+      box-sizing:border-box;
+    }
+
+    body{
+      margin:0;
+      padding:22px 12px 40px;
+      background:
+        linear-gradient(
+          180deg,
+          #fff2f8 0%,
+          #f8f2ff 50%,
+          #eef7ff 100%
+        );
+      color:#6b4b2a;
+      font-family:
+        "Hiragino Kaku Gothic ProN",
+        "Yu Gothic",
+        sans-serif;
+      text-align:center;
+    }
+
+    .main-card{
+      width:94%;
+      max-width:640px;
+      margin:0 auto;
+      padding:24px 14px 30px;
+      background:rgba(255,255,255,0.94);
+      border-radius:28px;
+      box-shadow:0 8px 22px rgba(0,0,0,0.08);
+    }
+
+    h1{
+      margin:0 0 12px;
+      color:#6b4b2a;
+      font-size:27px;
+      line-height:1.45;
+    }
+
+    .desc{
+      margin:0 auto 20px;
+      color:#7b6047;
+      font-size:16px;
+      line-height:1.8;
+    }
+
+    .soft-note{
+      width:94%;
+      max-width:540px;
+      margin:0 auto 18px;
+      padding:14px 16px;
+      background:#fff8dc;
+      border-radius:20px;
+      color:#80684d;
+      font-size:14px;
+      line-height:1.75;
+    }
+
+    .question-box{
+      width:94%;
+      max-width:540px;
+      margin:16px auto 0;
+      padding:19px 16px;
+      background:#fffdf9;
+      border-radius:24px;
+      box-shadow:0 5px 14px rgba(0,0,0,0.06);
+      text-align:left;
+    }
+
+    .question-title{
+      margin-bottom:8px;
+      color:#6b4b2a;
+      font-size:18px;
+      font-weight:bold;
+      line-height:1.65;
+      text-align:center;
+    }
+
+    .question-note{
+      margin:0 0 12px;
+      color:#947b67;
+      font-size:14px;
+      line-height:1.7;
+      text-align:center;
+    }
+
+    textarea{
+      display:block;
+      width:100%;
+      min-height:125px;
+      margin:10px auto 0;
+      padding:14px 15px;
+      border:2px solid #dccbf4;
+      border-radius:19px;
+      background:#fff;
+      color:#5b3a1e;
+      font-family:inherit;
+      font-size:16px;
+      line-height:1.65;
+      resize:vertical;
+      outline:none;
+    }
+
+    textarea:focus{
+      border-color:#b79ae8;
+      box-shadow:0 0 0 4px rgba(183,154,232,0.12);
+    }
+
+    .choice-list{
+      display:flex;
+      justify-content:center;
+      flex-wrap:wrap;
+      gap:10px;
+      margin-top:12px;
+    }
+
+    .choice-item{
+      position:relative;
+      cursor:pointer;
+    }
+
+    .choice-item input{
+      position:absolute;
+      opacity:0;
+      pointer-events:none;
+    }
+
+    .choice-item span{
+      display:block;
+      padding:11px 16px;
+      border-radius:24px;
+      background:#f8e9f3;
+      color:#74533c;
+      font-size:15px;
+      font-weight:bold;
+      transition:0.2s;
+    }
+
+    .choice-item input:checked + span{
+      color:#fff;
+      background:
+        linear-gradient(
+          135deg,
+          #e9a9cf,
+          #b59ae8,
+          #91a8ec
+        );
+      transform:scale(1.03);
+    }
+
+    .button-group{
+      display:flex;
+      justify-content:center;
+      flex-wrap:wrap;
+      gap:12px;
+      margin-top:22px;
+    }
+
+    button{
+      min-width:220px;
+      padding:15px 20px;
+      border:none;
+      border-radius:28px;
+      color:#fff;
+      font-family:inherit;
+      font-size:16px;
+      font-weight:bold;
+      line-height:1.45;
+      cursor:pointer;
+      box-shadow:0 5px 13px rgba(0,0,0,0.1);
+    }
+
+    button:active{
+      transform:scale(0.98);
+    }
+
+    .copy-btn{
+      background:
+        linear-gradient(
+          135deg,
+          #eda9ce,
+          #b395e9,
+          #849fe9
+        );
+    }
+
+    .clear-btn{
+      background:
+        linear-gradient(
+          135deg,
+          #a8ddcd,
+          #82cbb8
+        );
+    }
+
+    .back-btn{
+      background:
+        linear-gradient(
+          135deg,
+          #ffbe73,
+          #f6a65d
+        );
+    }
+
+    .message{
+      min-height:24px;
+      margin-top:14px;
+      color:#7c5d88;
+      font-size:15px;
+      font-weight:bold;
+    }
+
+    @media(max-width:480px){
+      h1{
+        font-size:23px;
+      }
+
+      .desc{
+        font-size:15px;
+      }
+
+      .question-title{
+        font-size:17px;
+      }
+
+      button{
+        width:100%;
+        min-width:0;
+        font-size:15px;
+      }
+    }
+  </style>
+</head>
+
+<body>
+
+  <div class="main-card">
+
+    <h1>
+      🌿 私のマイルールを見てみよう 🌿
+    </h1>
+
+    <p class="desc">
+      「ここがダメ」と思っていた自分から、<br>
+      いつの間にか自分に決めていた<br>
+      「こうあるべき」を見つけてみよう😊
+    </p>
+
+    <div class="soft-note">
+      自分を責めるためのワークではありません🌱<br>
+      今まで自分を守るために<br>
+      作っていたルールに気づいて<br>
+      少しやさしく見直す時間です😊
+    </div>
+
+
+    <div class="question-box">
+
+      <div class="question-title">
+        ① 私が「ここはダメかも」と<br>
+        思っているところは？
+      </div>
+
+      <p class="question-note">
+        性格・行動・考え方など<br>
+        思いつくまま書いてね😊
+      </p>
+
+      <textarea
+        id="badPoint"
+        placeholder="例：すぐ不安になる。決めるのが遅い。飽きっぽい。"
+      ></textarea>
+
+    </div>
+
+
+    <div class="question-box">
+
+      <div class="question-title">
+        ② それは、どうしてダメだと思うの？
+      </div>
+
+      <p class="question-note">
+        「○○でなければいけないから」<br>
+        などでも大丈夫です🌿
+      </p>
+
+      <textarea
+        id="whyBad"
+        placeholder="例：いつも自信を持って、すぐに決められないないから。"
+      ></textarea>
+
+    </div>
+
+
+    <div class="question-box">
+
+      <div class="question-title">
+        ③ 誰かにそう言われたことがある？
+      </div>
+
+      <p class="question-note">
+        近いものを選んでね<br>
+        複数選んでも大丈夫です😊
+      </p>
+
+      <div class="choice-list">
+
+        <label class="choice-item">
+          <input
+            type="checkbox"
+            class="said-check"
+            value="父に言われたことがある"
+          >
+          <span>父</span>
+        </label>
+
+        <label class="choice-item">
+          <input
+            type="checkbox"
+            class="said-check"
+            value="母に言われたことがある"
+          >
+          <span>母</span>
+        </label>
+
+        <label class="choice-item">
+          <input
+            type="checkbox"
+            class="said-check"
+            value="家族に言われたことがある"
+          >
+          <span>家族</span>
+        </label>
+
+        <label class="choice-item">
+          <input
+            type="checkbox"
+            class="said-check"
+            value="先生に言われたことがある"
+          >
+          <span>先生</span>
+        </label>
+
+        <label class="choice-item">
+          <input
+            type="checkbox"
+            class="said-check"
+            value="友人や周りの人に言われたことがある"
+          >
+          <span>周りの人</span>
+        </label>
+
+        <label class="choice-item">
+          <input
+            type="checkbox"
+            class="said-check"
+            value="誰かに言われた覚えはない"
+          >
+          <span>覚えていない</span>
+        </label>
+
+      </div>
+
+      <textarea
+        id="saidWords"
+        placeholder="覚えている言葉や出来事があれば書いてね。何も思い出さなくても大丈夫です🌿"
+      ></textarea>
+
+    </div>
+
+
+    <div class="question-box">
+
+      <div class="question-title">
+        ④ 私は自分に、どんなマイルールを<br>
+        設定していたのかな？
+      </div>
+
+      <p class="question-note">
+        「○○しなければ」「○○であるべき」<br>
+        などを書いてみてね😊
+      </p>
+
+      <textarea
+        id="myRule"
+        placeholder="例：迷ってはいけない。人に迷惑をかけてはいけない。いつも頑張らなければいけない。"
+      ></textarea>
+
+    </div>
+
+
+    <div class="question-box">
+
+      <div class="question-title">
+        ⑤ そのマイルールを少しゆるめたら、<br>
+        どんな私でいられるかな？
+      </div>
+
+      <p class="question-note">
+        まだ分からない場合は、空欄でも大丈夫です🌈
+      </p>
+
+      <textarea
+        id="freeSelf"
+        placeholder="例：迷っても大丈夫。自分のペースで考えていい。人に頼ってもいい。"
+      ></textarea>
+
+    </div>
+
+
+    <div class="button-group">
+
+      <button
+        class="copy-btn"
+        onclick="copyPrompt()"
+      >
+        🐶 チャッピーGPTに送る文章をコピー
+      </button>
+
+      <button
+        class="clear-btn"
+        onclick="clearForm()"
+      >
+        🌿 入力を消す
+      </button>
+
+    </div>
+
+    <div
+      id="copyMessage"
+      class="message"
+    ></div>
+
+
+    <div class="button-group">
+
+      <button
+        class="back-btn"
+        onclick="location.href='index.html'"
+      >
+        🏠 メニューにもどる
+      </button>
+
+    </div>
+
+  </div>
+
+
+  <script>
+
+    function getSelectedWords(){
+      const selected = [];
+
+      document
+        .querySelectorAll(".said-check:checked")
+        .forEach((checkbox) => {
+          selected.push(checkbox.value);
+        });
+
+      return selected;
+    }
+
+
+    function createPrompt(){
+      const badPoint =
+        document
+          .getElementById("badPoint")
+          .value
+          .trim();
+
+      const whyBad =
+        document
+          .getElementById("whyBad")
+          .value
+          .trim();
+
+      const selectedWords =
+        getSelectedWords();
+
+      const saidWords =
+        document
+          .getElementById("saidWords")
+          .value
+          .trim();
+
+      const myRule =
+        document
+          .getElementById("myRule")
+          .value
+          .trim();
+
+      const freeSelf =
+        document
+          .getElementById("freeSelf")
+          .value
+          .trim();
+
+      const selectedText =
+        selectedWords.length > 0
+          ? selectedWords.join("、")
+          : "特になし・よく分からない";
+
+      return `チャッピー
+自分に設定していたマイルールを見てみたよ🌿
+
+【私がダメだと思っているところ】
+${badPoint || "特になし・よく分からない"}
+
+【どうしてダメだと思う？】
+${whyBad || "特になし・よく分からない"}
+
+【誰かに言われたことがある？】
+${selectedText}
+
+【覚えている言葉や出来事】
+${saidWords || "特になし・思い出せない"}
+
+【自分に設定していたマイルール】
+${myRule || "特になし・よく分からない"}
+
+【そのマイルールをゆるめたら、どんな私でいられる？】
+${freeSelf || "まだよく分からない"}
+
+自分を責めるのではなく、
+このマイルールが今まで私を守るために必要だった可能性も大切にしながら、
+本当に今の私にも必要なルールなのかをやさしく整理してください😊
+
+ダメだと思っていたところも、
+見方を変えたらどんな長所や力になるのか教えてください🌈`;
+    }
+
+
+    async function copyPrompt(){
+      const promptText =
+        createPrompt();
+
+      const message =
+        document.getElementById("copyMessage");
+
+      try{
+        await navigator.clipboard.writeText(
+          promptText
+        );
+
+        message.textContent =
+          "コピーできました😊 チャッピーGPTに送ってね🐶💕";
+
+      }catch(error){
+        const textarea =
+          document.createElement("textarea");
+
+        textarea.value =
+          promptText;
+
+        document.body.appendChild(
+          textarea
+        );
+
+        textarea.select();
+
+        document.execCommand(
+          "copy"
+        );
+
+        textarea.remove();
+
+        message.textContent =
+          "コピーできました😊 チャッピーGPTに送ってね🐶💕";
+      }
+    }
+
+
+    function clearForm(){
+      const confirmClear =
+        confirm(
+          "入力した内容を消しますか？😊"
+        );
+
+      if(!confirmClear){
+        return;
+      }
+
+      document
+        .querySelectorAll("textarea")
+        .forEach((textarea) => {
+          textarea.value = "";
+        });
+
+      document
+        .querySelectorAll(".said-check")
+        .forEach((checkbox) => {
+          checkbox.checked = false;
+        });
+
+      document
+        .getElementById("copyMessage")
+        .textContent = "";
+
+      window.scrollTo({
+        top:0,
+        behavior:"smooth"
+      });
+    }
+
+  </script>
+
+</body>
+</html>

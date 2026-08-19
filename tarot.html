@@ -1,0 +1,817 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>チャッピー＆サリーの私にもどる対話ナビ</title>
+
+<style>
+body{
+  font-family:"Hiragino Kaku Gothic ProN", sans-serif;
+  background:#fff0f5;
+  text-align:center;
+  margin:0;
+  padding:20px 14px 40px;
+  color:#6b4b2a;
+}
+
+.page-title{
+  font-size:28px;
+  font-weight:bold;
+  line-height:1.4;
+  margin:8px 0 18px;
+}
+
+.box{
+  width:92%;
+  max-width:680px;
+  margin:0 auto 18px;
+  background:rgba(255,255,255,0.92);
+  border-radius:28px;
+  padding:22px 16px;
+  box-sizing:border-box;
+  box-shadow:0 6px 18px rgba(0,0,0,0.07);
+}
+
+.desc{
+  font-size:18px;
+  line-height:1.8;
+  margin:0 0 16px;
+}
+
+.label{
+  font-size:16px;
+  line-height:1.7;
+  color:#8a6a4a;
+  margin:8px 0 6px;
+}
+
+select,
+textarea{
+  width:92%;
+  max-width:520px;
+  box-sizing:border-box;
+  padding:14px 16px;
+  border-radius:20px;
+  border:2px solid #d8c0ff;
+  font-size:17px;
+  background:white;
+  margin:6px 0 10px;
+}
+
+textarea{
+  min-height:90px;
+  resize:vertical;
+}
+
+button{
+  border:none;
+  border-radius:28px;
+  padding:14px 18px;
+  font-size:18px;
+  color:white;
+  cursor:pointer;
+  margin:8px 6px;
+  box-shadow:0 4px 10px rgba(0,0,0,0.08);
+  transition:transform 0.15s ease, opacity 0.15s ease;
+}
+
+button:hover{
+  transform:translateY(-1px);
+}
+
+button:disabled{
+  opacity:0.45;
+  cursor:not-allowed;
+  transform:none;
+}
+
+.btn-pink{
+  background:linear-gradient(135deg,#f6b1c7,#eab0f5);
+}
+
+.btn-purple{
+  background:linear-gradient(135deg,#b9a3ff,#9ea8ff);
+}
+
+.btn-orange{
+  background:linear-gradient(135deg,#ffbe73,#f6a65d);
+}
+
+.back-btn{
+  background:linear-gradient(135deg,#ffbe73,#f6a65d);
+}
+
+.draw-row,
+.sub-row{
+  display:flex;
+  justify-content:center;
+  flex-wrap:wrap;
+  gap:10px;
+  margin-top:8px;
+}
+
+.sub-row button{
+  min-width:120px;
+}
+
+.selected-sub{
+  outline:4px solid rgba(255,255,255,0.9);
+  box-shadow:
+    0 0 0 3px rgba(153,112,255,0.25),
+    0 4px 10px rgba(0,0,0,0.08);
+}
+
+.question-box{
+  width:92%;
+  max-width:560px;
+  margin:14px auto 0;
+  padding:16px 14px;
+  box-sizing:border-box;
+  background:#f6ecff;
+  border-radius:20px;
+  font-size:18px;
+  line-height:1.8;
+  white-space:pre-line;
+}
+
+.cards-area{
+  width:94%;
+  max-width:760px;
+  margin:0 auto 14px;
+  display:flex;
+  justify-content:center;
+  flex-wrap:wrap;
+  gap:18px;
+}
+
+.card-box img{
+  width:180px;
+  max-width:28vw;
+  min-width:120px;
+  border-radius:16px;
+  box-shadow:0 8px 18px rgba(0,0,0,0.14);
+  background:white;
+}
+
+.reversed{
+  transform:rotate(180deg);
+}
+
+.notice{
+  font-size:20px;
+  line-height:1.9;
+  white-space:pre-line;
+}
+
+.hidden{
+  display:none !important;
+}
+
+.small-note{
+  font-size:14px;
+  line-height:1.7;
+  color:#9b7c5c;
+  margin-top:4px;
+}
+
+#welcomeScreen{
+  min-height:100vh;
+  display:flex;
+  flex-direction:column;
+  align-items:center;
+  justify-content:center;
+  padding:24px;
+  box-sizing:border-box;
+  animation:fadeIn 0.8s ease;
+}
+
+#welcomeScreen img{
+  width:84%;
+  max-width:420px;
+  border-radius:24px;
+  box-shadow:0 8px 18px rgba(0,0,0,0.12);
+}
+
+#welcomeText{
+  margin-top:18px;
+  font-size:28px;
+  color:#6b4b2a;
+  line-height:1.6;
+}
+
+@keyframes fadeIn{
+  from{
+    opacity:0;
+  }
+
+  to{
+    opacity:1;
+  }
+}
+
+@media (max-width:480px){
+  .page-title{
+    font-size:24px;
+  }
+
+  .desc,
+  .question-box,
+  .notice{
+    font-size:16px;
+  }
+
+  button,
+  textarea,
+  select{
+    font-size:16px;
+  }
+
+  .card-box img{
+    width:150px;
+    max-width:40vw;
+    min-width:110px;
+  }
+
+  #welcomeText{
+    font-size:24px;
+  }
+}
+</style>
+</head>
+
+<body>
+
+<!-- 対話ナビ -->
+<div id="mainContent">
+
+  <div class="page-title">
+    🐶 チャッピー＆サリーの<br>
+    AI×タロットで<br>
+    やさしく整う時間⏳️
+  </div>
+
+
+  <!-- 今の気持ち -->
+  <div class="box">
+
+    <p class="desc">
+      これは占いではなく<br>
+      今のあなたの気持ちを<br>
+      やさしく整える対話です🌿
+    </p>
+
+    <div class="label">
+      今の気持ちを選んでね😊
+    </div>
+
+    <select id="feelingSelect">
+      <option value="">選択してください</option>
+      <option value="よくわからない">よくわからない</option>
+      <option value="もやっとしてる">もやっとしてる</option>
+      <option value="なんとなく不安">なんとなく不安</option>
+      <option value="少し安心してる">少し安心してる</option>
+    </select>
+
+  </div>
+
+
+  <!-- 自由質問 -->
+  <div class="box">
+
+    <div
+      class="label"
+      style="font-size:18px; font-weight:bold; color:#6b4b2a;"
+    >
+      🌱 チャッピーに聞いてみたいこと
+    </div>
+
+    <p class="small-note">
+      質問が決まっているときは、ここに書いてね😊<br>
+      チャッピーから聞かれた質問を貼り付けてもOKだよ🐾
+    </p>
+
+    <textarea
+      id="questionInput"
+      placeholder="例：私は本当は何を怖がっているのかな？"
+    ></textarea>
+
+  </div>
+
+
+  <!-- テーマから質問を選ぶ -->
+  <div class="box">
+
+    <div
+      class="label"
+      style="font-size:18px; font-weight:bold; color:#6b4b2a;"
+    >
+      テーマから質問を選んでもOK😊
+    </div>
+
+    <p class="small-note">
+      質問が思いつかないときは、テーマを選んでね🌈
+    </p>
+
+    <select
+      id="roleSelect"
+      onchange="selectRole()"
+    >
+      <option value="">テーマを選ぶ</option>
+      <option value="yasashiku">🌿 安心に戻る</option>
+      <option value="kizuki">🌈 気づきをえる</option>
+      <option value="modoru">✨ 本来の私に戻る</option>
+    </select>
+
+    <div
+      id="subCategoryArea"
+      class="sub-row"
+    ></div>
+
+    <div
+      id="questionBox"
+      class="question-box hidden"
+    ></div>
+
+  </div>
+
+
+  <!-- カードを引く -->
+  <div class="box">
+
+    <div class="draw-row">
+
+      <button
+        id="draw1"
+        class="btn-pink"
+        onclick="drawCards(1)"
+        disabled
+      >
+        1枚引き
+      </button>
+
+      <button
+        id="draw3"
+        class="btn-purple"
+        onclick="drawCards(3)"
+        disabled
+      >
+        3枚引き
+      </button>
+
+      <button
+  class="back-btn"
+  onclick="goBackMenu()"
+>
+  🏠 メニューにもどる
+      </button>
+
+    </div>
+
+    <div class="small-note">
+      自分で質問を書くか、テーマから質問を選ぶと<br>
+      カードが引けるようになるよ🐾
+    </div>
+
+  </div>
+
+
+  <div
+    id="cardsArea"
+    class="cards-area"
+  ></div>
+
+
+  <!-- コピー -->
+  <div
+    id="copyArea"
+    class="box hidden"
+  >
+
+    <button
+      class="btn-pink"
+      onclick="copyMain()"
+    >
+      チャッピーGPTへ送る文章をコピー🐾
+    </button>
+
+  </div>
+
+
+  <!-- 注意 -->
+  <div
+    id="noticeArea"
+    class="box hidden"
+  >
+
+    <div class="notice">しっくりこなかったら
+気がすむまでAIと話しても大丈夫😊
+
+答えを出さなくてもいいし
+そのまま対話しながらカードを引きなおしてもOKだよ🌈</div>
+
+  </div>
+
+</div>
+
+
+<!-- メニューへ戻る前の画面 -->
+<div
+  id="welcomeScreen"
+  class="hidden"
+>
+
+  <img
+    src="https://raw.githubusercontent.com/Chappy-Sally/chappy-sally-images/main/covers/cs_ufufu.png"
+    alt="おかえり"
+  >
+
+  <div id="welcomeText"></div>
+
+</div>
+
+
+<!-- 質問集 -->
+<script src="tarot-questions.js"></script>
+
+
+<script>
+const tarotImageBase =
+  "https://raw.githubusercontent.com/Chappy-Sally/chappy-sally-images/main/tarot/";
+
+
+const cardFiles = [
+  "00_The_Fool.png",
+  "01_The_Magician.png",
+  "02_The_High_Priestess.png",
+  "03_The_Empress.png",
+  "04_The_Emperor.png",
+  "05_The_Hierophant.png",
+  "06_The_Lovers.png",
+  "07_The_Chariot.png",
+  "08_Strength.png",
+  "09_The_Hermit.png",
+  "10_Wheel_of_Fortune.png",
+  "11_Justice.png",
+  "12_The_Hanged_Man.png",
+  "13_Death.png",
+  "14_Temperance.png",
+  "15_The_Devil.png",
+  "16_The_Tower.png",
+  "17_The_Star.png",
+  "18_The_Moon.png",
+  "19_The_Sun.png",
+  "20_Judgement.png",
+  "21_The_World.png",
+  "22_Compass.png"
+];
+
+
+const cardNames = {
+  "00_The_Fool.png":"00 愚者（The Fool）",
+  "01_The_Magician.png":"01 魔術師（The Magician）",
+  "02_The_High_Priestess.png":"02 女教皇（The High Priestess）",
+  "03_The_Empress.png":"03 女帝（The Empress）",
+  "04_The_Emperor.png":"04 皇帝（The Emperor）",
+  "05_The_Hierophant.png":"05 教皇（The Hierophant）",
+  "06_The_Lovers.png":"06 恋人（The Lovers）",
+  "07_The_Chariot.png":"07 戦車（The Chariot）",
+  "08_Strength.png":"08 力（Strength）",
+  "09_The_Hermit.png":"09 隠者（The Hermit）",
+  "10_Wheel_of_Fortune.png":"10 運命の輪（Wheel of Fortune）",
+  "11_Justice.png":"11 正義（Justice）",
+  "12_The_Hanged_Man.png":"12 吊るされた男（The Hanged Man）",
+  "13_Death.png":"13 死神（Death）",
+  "14_Temperance.png":"14 節制（Temperance）",
+  "15_The_Devil.png":"15 悪魔（The Devil）",
+  "16_The_Tower.png":"16 塔（The Tower）",
+  "17_The_Star.png":"17 星（The Star）",
+  "18_The_Moon.png":"18 月（The Moon）",
+  "19_The_Sun.png":"19 太陽（The Sun）",
+  "20_Judgement.png":"20 審判（Judgement）",
+  "21_The_World.png":"21 世界（The World）",
+  "22_Compass.png":"22 コンパス（Compass）"
+};
+
+
+let currentRole = "";
+let currentQuestion = "";
+let currentCards = [];
+
+
+/* テーマを選ぶ */
+function selectRole(){
+  currentRole =
+    document.getElementById("roleSelect").value;
+
+  currentQuestion = "";
+
+  const subArea =
+    document.getElementById("subCategoryArea");
+
+  subArea.innerHTML = "";
+
+  const questionBox =
+    document.getElementById("questionBox");
+
+  questionBox.classList.add("hidden");
+  questionBox.textContent = "";
+
+  if(!currentRole || !roleMap[currentRole]){
+    updateDrawButtons();
+    return;
+  }
+
+  Object
+    .keys(roleMap[currentRole].categories)
+    .forEach(category => {
+      const btn =
+        document.createElement("button");
+
+      btn.textContent = category;
+      btn.className = "btn-purple";
+
+      btn.onclick = () => {
+        selectCategory(category, btn);
+      };
+
+      subArea.appendChild(btn);
+    });
+
+  updateDrawButtons();
+}
+
+
+/* カテゴリーを選ぶ */
+function selectCategory(category, clickedButton){
+  document
+    .querySelectorAll("#subCategoryArea button")
+    .forEach(btn => {
+      btn.classList.remove("selected-sub");
+    });
+
+  clickedButton.classList.add("selected-sub");
+
+  const questions =
+    roleMap[currentRole].categories[category];
+
+  currentQuestion =
+    questions[
+      Math.floor(Math.random() * questions.length)
+    ];
+
+  const questionBox =
+    document.getElementById("questionBox");
+
+  questionBox.classList.remove("hidden");
+  questionBox.textContent = currentQuestion;
+
+  updateDrawButtons();
+}
+
+
+/* カードボタンを使えるようにする */
+function enableDrawButtons(){
+  document.getElementById("draw1").disabled = false;
+  document.getElementById("draw3").disabled = false;
+}
+
+
+/* カードボタンを使えなくする */
+function disableDrawButtons(){
+  document.getElementById("draw1").disabled = true;
+  document.getElementById("draw3").disabled = true;
+}
+
+
+/* 質問があるか確認する */
+function updateDrawButtons(){
+  const freeQuestion =
+    document
+      .getElementById("questionInput")
+      .value
+      .trim();
+
+  if(currentQuestion || freeQuestion){
+    enableDrawButtons();
+  }else{
+    disableDrawButtons();
+  }
+}
+
+
+/* 使用する質問を決める */
+function getQuestion(){
+  const freeQuestion =
+    document
+      .getElementById("questionInput")
+      .value
+      .trim();
+
+  if(freeQuestion){
+    return freeQuestion;
+  }
+
+  if(currentQuestion){
+    return currentQuestion;
+  }
+
+  return "（質問なし）";
+}
+
+
+/* 今の気持ちを取得する */
+function getFeeling(){
+  const selected =
+    document
+      .getElementById("feelingSelect")
+      .value
+      .trim();
+
+  return selected || "（特になし）";
+}
+
+
+/* カードを引く */
+function drawCards(count){
+  const question = getQuestion();
+
+  if(question === "（質問なし）"){
+    alert(
+      "質問を書くか、テーマから質問を選んでね🐾"
+    );
+    return;
+  }
+
+  const cardsArea =
+    document.getElementById("cardsArea");
+
+  cardsArea.innerHTML = "";
+  currentCards = [];
+
+  const selected =
+    [...cardFiles]
+      .sort(() => Math.random() - 0.5)
+      .slice(0, count);
+
+  selected.forEach(file => {
+    const reversed =
+      Math.random() < 0.5;
+
+    const card = {
+      file,
+      reversed
+    };
+
+    currentCards.push(card);
+
+    const box =
+      document.createElement("div");
+
+    box.className = "card-box";
+
+    const img =
+      document.createElement("img");
+
+    img.src = tarotImageBase + file;
+    img.alt = cardNames[file] || file;
+
+    if(reversed){
+      img.classList.add("reversed");
+    }
+
+    box.appendChild(img);
+    cardsArea.appendChild(box);
+  });
+
+  document
+    .getElementById("copyArea")
+    .classList
+    .remove("hidden");
+
+  document
+    .getElementById("noticeArea")
+    .classList
+    .remove("hidden");
+
+  cardsArea.scrollIntoView({
+    behavior:"smooth",
+    block:"center"
+  });
+}
+
+
+/* カード名をコピー用に整える */
+function formatCard(card){
+  const cardName =
+    cardNames[card.file] ||
+    card.file.replace(".png","");
+
+  const position =
+    card.reversed
+      ? "逆位置"
+      : "正位置";
+
+  return `${cardName}・${position}`;
+}
+
+
+/* チャッピーGPTへ送る文章をコピー */
+function copyMain(){
+  if(currentCards.length === 0){
+    alert("先にカードを引いてね🐾");
+    return;
+  }
+
+  let text = "";
+
+  text += `カードを引いたよ🌿\n\n`;
+
+  text += `【今の私の気持ち】\n`;
+  text += `${getFeeling()}\n\n`;
+
+  text += `【質問】\n`;
+  text += `${getQuestion()}\n\n`;
+
+  text += `【カード】\n`;
+
+  currentCards.forEach(card => {
+    text += `${formatCard(card)}\n`;
+  });
+
+  text += `\nだったよ😊`;
+
+  navigator.clipboard
+    .writeText(text.trim())
+    .then(() => {
+      alert(
+        "チャッピーGPTへ送る文章をコピーしたよ🐾"
+      );
+    })
+    .catch(() => {
+      alert(
+        "コピーできなかったよ。もう一度試してね🐾"
+      );
+    });
+}
+
+
+/* メニューへ戻る */
+function goHome(){
+  const main =
+    document.getElementById("mainContent");
+
+  const welcome =
+    document.getElementById("welcomeScreen");
+
+  main.classList.add("hidden");
+  welcome.classList.remove("hidden");
+
+  document.getElementById("welcomeText").textContent =
+    "🌈 おかえりなさい🌈";
+
+  setTimeout(() => {
+    location.href = "index.html";
+  }, 3000);
+}
+
+
+/* ページを開いたとき */
+window.addEventListener(
+  "DOMContentLoaded",
+  () => {
+    const questionInput =
+      document.getElementById("questionInput");
+
+    questionInput.addEventListener(
+      "input",
+      updateDrawButtons
+    );
+
+    updateDrawButtons();
+  }
+);
+
+ function goBackMenu(){
+  const params = new URLSearchParams(window.location.search);
+  const from = params.get("from");
+
+  if(from === "set"){
+    location.href =
+      "https://chappy-sally.github.io/chappy-sally-anshin-navi-set/";
+
+  }else if(from === "test2"){
+    location.href =
+      "https://chappy-sally.github.io/chappy-sally-tarot-navi-test2/";
+
+  }else{
+    location.href =
+      "https://chappy-sally.github.io/chappy-sally-tarot-navi/";
+  }
+ }
+  
+</script>
+
+</body>
+</html>
