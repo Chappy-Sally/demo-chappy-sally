@@ -122,15 +122,13 @@
       font-size:15px;
       font-weight:bold;
       box-shadow:none;
-      pointer-events:none;
-      opacity:1;
     }
 
     .main-button{
       display:block;
       width:92%;
       max-width:390px;
-      margin:18px auto 0;
+      margin:14px auto 0;
       padding:14px 18px;
       border:none;
       border-radius:28px;
@@ -139,8 +137,37 @@
       font-size:16px;
       font-weight:bold;
       line-height:1.5;
-      cursor:pointer;
       box-shadow:0 5px 12px rgba(0,0,0,0.10);
+    }
+
+    .btn-copy{
+      background:
+        linear-gradient(
+          135deg,
+          #d998b8,
+          #ad91df,
+          #829fdf
+        );
+    }
+
+    .btn-gpt{
+      background:
+        linear-gradient(
+          135deg,
+          #7088d8,
+          #9a83df,
+          #d49ada
+        );
+    }
+
+    .btn-reset{
+      background:
+        linear-gradient(
+          135deg,
+          #9fd8c9,
+          #a7c8ef,
+          #c2abe9
+        );
     }
 
     .btn-home{
@@ -151,16 +178,16 @@
           #ffb45f,
           #ff9f78
         );
+      cursor:pointer;
     }
 
-   /* デモ用：見た目はそのままで押せない */
-.demo-stop{
-  pointer-events:none;
-  opacity:1;
-  cursor:default;
-}
+    /* デモ用：色はそのまま・押しても動かない */
+    .demo-stop{
+      pointer-events:none;
+      opacity:1;
+      cursor:default;
+    }
 
-    
     .note{
       width:94%;
       max-width:540px;
@@ -225,11 +252,11 @@
     <p class="intro">
       私たちは気づかないうちに<br>
       「父ならこうしてくれるはず」<br>
-      「パートナーならわかってくれるはず」など<br>
+      「夫ならわかってくれるはず」など<br>
       相手の役割を決めていることがあります😊<br><br>
 
-      その設定に気づいて<br>
-      別の視点から関係を眺めてみるワークです🌿
+      その設定を少し見直して<br>
+      別の視点から関係を眺めてみよう🌿
     </p>
 
     <div class="example-box">
@@ -253,29 +280,29 @@
 
         <button
           type="button"
-          class="relation-btn"
+          class="relation-btn demo-stop"
         >
           父
         </button>
 
         <button
           type="button"
-          class="relation-btn"
+          class="relation-btn demo-stop"
         >
           母
         </button>
 
         <button
           type="button"
-          class="relation-btn"
+          class="relation-btn demo-stop"
         >
           パートナー
         </button>
 
         <button
           type="button"
-          class="relation-btn"
-          aria-label="その他の相手"
+          class="relation-btn demo-stop"
+          aria-label="その他"
         >
           　　　　
         </button>
@@ -283,30 +310,31 @@
       </div>
 
       <div class="note">
-        デモでは、この先の質問には進みません😊
+        デモでは、この先のワークには進みません😊
       </div>
 
     </div>
-<button
-  class="main-button btn-copy demo-stop"
-  type="button"
->
-  🐶 チャッピーGPTに送る文章をコピー
-</button>
 
-<button
-  class="main-button btn-gpt demo-stop"
-  type="button"
->
-  🐾 チャッピーGPTを開く
-</button>
+    <button
+      class="main-button btn-copy demo-stop"
+      type="button"
+    >
+      🐶 チャッピーGPTに送る文章をコピー
+    </button>
 
-<button
-  class="main-button btn-reset demo-stop"
-  type="button"
->
-  もう一度やってみる
-</button>
+    <button
+      class="main-button btn-gpt demo-stop"
+      type="button"
+    >
+      🐾 チャッピーGPTを開く
+    </button>
+
+    <button
+      class="main-button btn-reset demo-stop"
+      type="button"
+    >
+      もう一度やってみる
+    </button>
 
     <button
       class="main-button btn-home"
