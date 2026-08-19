@@ -1,1 +1,300 @@
 
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">
+
+  <meta
+    name="viewport"
+    content="width=device-width, initial-scale=1.0"
+  >
+
+  <title>チャッピー＆サリーの安心ナビ</title>
+
+  <link rel="stylesheet" href="bossindex.css">
+</head>
+
+<body>
+
+  <div class="main-card">
+
+    <h1>
+      🐶 チャッピー＆サリーの<br>
+      安心に戻る時間🌿
+    </h1>
+
+    <img
+      src="https://raw.githubusercontent.com/Chappy-Sally/chappy-sally-images/main/covers/CS_hyousi.jpg"
+      class="hero-img"
+      alt="チャッピー＆サリーの表紙"
+    >
+
+    <p class="desc">
+      モヤモヤしたときも<br>
+      不安になったときも大丈夫😊<br>
+      一緒に安心へ戻ろう🌈
+    </p>
+
+
+    <!-- 1. 安心に戻る -->
+    <div class="guide-box">
+
+      <div class="guide-title">
+        🌈 安心に戻る
+      </div>
+
+      <div class="guide-text">
+        「でも」「どうせ」「無理かも」<br>
+        願いを止めている言葉の奥にある<br>
+        本当の気持ちをやさしく整理します😊
+      </div>
+
+      <button
+        class="btn-purple"
+        onclick="location.href='boss-anshin.html'"
+      >
+        安心に戻る🌈
+      </button>
+
+          </div>
+
+   <!-- 安心できない私へ -->
+<div class="guide-box">
+
+  <div class="guide-title">
+    🌱 安心できない私へ
+  </div>
+
+  <div class="guide-text">
+    今感じている不安やモヤモヤの奥には<br>
+    「本当は安心したかった私」に<br>
+    やさしく会いに行くワークです😊
+  </div>
+
+  <button
+    class="btn-purple"
+    onclick="location.href='anshin-me.html'"
+  >
+    安心できない私に会いに行く🌱
+  </button>
+
+</div>
+    
+
+    <!-- 私にもどる対話ナビ -->
+    <div class="guide-box">
+
+      <div class="guide-title">
+        🔮 私にもどる対話ナビ
+      </div>
+
+      <div class="guide-text">
+        今の気持ちや気になることを入れて<br>
+        カードからやさしいヒントを受け取ります😊
+      </div>
+
+      <button
+        class="btn-purple"
+        onclick="location.href='https://chappy-sally.github.io/chappy-sally-tarot-navi/tarot.html?from=set'"
+      >
+        タロットカードを引いてみよう
+      </button>
+
+    </div>
+
+<!-- 私が勝手に設定した役割 -->
+<div class="guide-box">
+
+  <div class="guide-title">
+    🎭 私が勝手に設定した役割
+  </div>
+
+  <div class="guide-text">
+    父・母・夫・子ども・上司・お金などに<br>
+    無意識に決めていた役割に気づいて<br>
+    別の視点からやさしく見直します😊
+  </div>
+
+  <button
+    class="btn-role"
+    onclick="location.href='roles.html'"
+  >
+    私が設定した役割を見てみる
+  </button>
+
+</div>
+
+    <!-- あの頃の私に会いに行く -->
+<div class="guide-box">
+
+  <div class="guide-title">
+    🌿 あの頃の私に会いに行こう
+  </div>
+
+  <div class="guide-text">
+    過去の自分の気持ちに気づいて<br>
+    今の自分から「大丈夫だよ」と<br>
+    やさしく声をかけてみよう😊
+  </div>
+
+  <button
+    class="btn-child"
+    onclick="location.href='child.html'"
+  >
+    あの頃の私に会いに行く
+  </button>
+
+</div>
+
+
+<!-- 喜びを先に味わう -->
+<div class="guide-box">
+
+  <div class="guide-title">
+    🌈 喜びを先に味わうワーク
+  </div>
+
+  <div class="guide-text">
+    願いが叶ったときの景色や気持ちを<br>
+    思い浮かべてみて😚<br>
+    その喜びを今<br>
+    少しだけ先に味わってみよう🤭💕
+  </div>
+
+  <button
+    class="btn-joy"
+    onclick="location.href='joy.html'"
+  >
+    喜びを先に味わってみる
+  </button>
+
+</div>
+
+    <!-- 2. チャッピーGPT -->
+    <div class="guide-box">
+
+      <div class="guide-title">
+        🐶 チャッピーと話す 🐾
+      </div>
+
+      <div class="guide-text">
+        チャッピーはあなたの気持ちに寄り添いながら<br>
+        一緒に安心へ戻る、やさしい相棒です🐾
+      </div>
+
+      <button
+  class="btn-chappy"
+  onclick="openChappyGPT()"
+>
+  チャッピーGPTと話す
+</button>
+
+<button
+  class="btn-chappy guide-btn"
+  onclick="toggleChappyGuide()"
+>
+  🐾 チャッピーGPTの使い方
+</button>
+
+<div
+  id="chappyGuide"
+  class="guide-image-wrap"
+  style="display:none;"
+>
+  
+  <img
+    src="https://raw.githubusercontent.com/Chappy-Sally/chappy-sally-images/main/covers/cs_tukaikata_c.png"
+    alt="チャッピーGPTの使い方"
+    class="guide-image"
+  >
+</div>
+      
+    </div>
+
+
+    <!-- 3. 深呼吸 -->
+    <div class="guide-box">
+
+      <div class="guide-title">
+        🌿 深呼吸してみよう 🌿
+      </div>
+
+      <div class="guide-text">
+        考えすぎたときや<br>
+        まず安心に戻りたいときに😊
+      </div>
+
+      <button
+        class="btn-breath"
+        onclick="location.href='shinkokyu.html'"
+      >
+        深呼吸してみよう
+      </button>
+
+    </div>
+
+
+    <!-- 4. しあわせスイッチ -->
+    <div class="guide-box">
+
+      <div class="guide-title">
+        🌈 しあわせスイッチ 🌈
+      </div>
+
+      <div class="guide-text">
+        今ある小さなしあわせに気づいて<br>
+        気持ちをふわっと切り替えたいときに🤭
+      </div>
+
+      <button
+        class="btn-switch"
+        onclick="location.href='switch.html'"
+      >
+        しあわせスイッチを押す
+      </button>
+
+    </div>
+
+
+    <!-- 大切なこと -->
+    <div class="important-box">
+      AIからの言葉は答えや正解ではありません😊<br>
+      今の自分を整理するヒントとして<br>
+      しっくりくる言葉だけ受け取ってね🌿
+    </div>
+
+  </div>
+
+
+  <script>
+    function openChappyGPT(){
+      const chappyGptUrl =
+        "https://chatgpt.com/g/g-6a521739bdc08191be5387b1993ba520-tiyatuhigpt";
+
+      window.open(
+        chappyGptUrl,
+        "_blank",
+        "noopener,noreferrer"
+      );
+    }
+    
+  function toggleChappyGuide(){
+  const guide =
+    document.getElementById("chappyGuide");
+
+  if(guide.style.display === "none"){
+    guide.style.display = "block";
+
+    guide.scrollIntoView({
+      behavior:"smooth",
+      block:"start"
+    });
+  }else{
+    guide.style.display = "none";
+  }
+  }
+    
+  </script>
+
+</body>
+</html>
