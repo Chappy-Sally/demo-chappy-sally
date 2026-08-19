@@ -1,1 +1,506 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">
+
+  <meta
+    name="viewport"
+    content="width=device-width, initial-scale=1.0"
+  >
+
+  <title>チャッピー＆サリーの私にもどる対話ナビ</title>
+
+  <style>
+    *{
+      box-sizing:border-box;
+    }
+
+    body{
+      font-family:"Hiragino Kaku Gothic ProN", sans-serif;
+      text-align:center;
+      background:#fff0f5;
+      color:#5b3a1e;
+      margin:0;
+      padding:20px 14px 40px;
+    }
+
+    .main-card{
+      width:92%;
+      max-width:620px;
+      margin:0 auto;
+      padding:22px 16px 26px;
+      background:rgba(255,255,255,0.92);
+      border-radius:28px;
+      box-shadow:0 6px 18px rgba(0,0,0,0.08);
+    }
+
+    h1{
+      margin:0 0 14px;
+      color:#6b4b2a;
+      font-size:29px;
+      line-height:1.45;
+    }
+
+    .hero-img{
+      display:block;
+      width:92%;
+      max-width:470px;
+      margin:14px auto 18px;
+      border-radius:22px;
+      box-shadow:0 8px 18px rgba(0,0,0,0.12);
+    }
+
+    .desc{
+      margin:0 auto 18px;
+      color:#7b5b39;
+      font-size:17px;
+      line-height:1.7;
+    }
+
+    .guide-box{
+      width:94%;
+      max-width:510px;
+      margin:12px auto 0;
+      padding:14px;
+      background:#fffdf8;
+      border-radius:22px;
+      box-shadow:0 4px 10px rgba(0,0,0,0.05);
+    }
+
+    .guide-title{
+      margin-bottom:5px;
+      color:#6b4b2a;
+      font-size:19px;
+      font-weight:bold;
+    }
+
+    .guide-text{
+      margin-bottom:10px;
+      color:#7b5b39;
+      font-size:15px;
+      line-height:1.6;
+    }
+
+    button{
+      width:88%;
+      max-width:360px;
+      margin:4px auto;
+      padding:14px 18px;
+      border:none;
+      border-radius:28px;
+      color:white;
+      font-size:17px;
+      font-weight:bold;
+      line-height:1.4;
+      cursor:pointer;
+      box-shadow:0 4px 10px rgba(0,0,0,0.08);
+    }
+
+    button:active{
+      transform:scale(0.98);
+    }
+
+    .btn-tarot{
+      background:linear-gradient(
+        135deg,
+        #f6b1c7,
+        #d6a8f3,
+        #b9a3ff
+      );
+    }
+
+    .btn-chappy{
+      background:linear-gradient(
+        135deg,
+        #7088d8,
+        #9a83df,
+        #d49ada
+      );
+    }
+
+    .btn-breath{
+      background:linear-gradient(
+        135deg,
+        #8fd8c8,
+        #9fc8ff,
+        #b9afea
+      );
+    }
+
+    .btn-switch{
+      background:linear-gradient(
+        135deg,
+        #f9d783,
+        #f6b46e,
+        #f2a1c8
+      );
+    }
+
+    .btn-role{
+  background:linear-gradient(
+    135deg,
+    #d7a6e8,
+    #b99be8,
+    #8fa9e8
+  );
+    }
+
+    .btn-rule{
+  background:linear-gradient(
+    135deg,
+    #b9d7a8,
+    #9fcfb4,
+    #9eb8e8
+  );
+    }
+
+    .btn-child{
+  background:linear-gradient(
+    135deg,
+    #e7b3c8,
+    #c7a9e8,
+    #9eb8e8
+  );
+}
+
+.btn-joy{
+  background:linear-gradient(
+    135deg,
+    #f6c86f,
+    #f2a0b9,
+    #b59ce8
+  );
+}
+
+    .guide-btn{
+  margin-top:10px;
+}
+
+.guide-image-wrap{
+  width:78%;
+  max-width:380px;
+  margin:14px auto 0;
+  padding:8px;
+  background:rgba(255,255,255,0.9);
+  border-radius:20px;
+  box-shadow:0 6px 16px rgba(0,0,0,0.08);
+}
+
+.guide-image{
+  display:block;
+  width:100%;
+  height:auto;
+  border-radius:14px;
+}
+
+    .important-box{
+      width:94%;
+      max-width:510px;
+      margin:14px auto 0;
+      padding:13px 14px;
+      background:#fff8fc;
+      border-radius:20px;
+      color:#8a6d58;
+      font-size:14px;
+      line-height:1.7;
+    }
+
+    @media(max-width:480px){
+      body{
+        padding:16px 10px 32px;
+      }
+
+      .main-card{
+        width:96%;
+        padding:20px 12px 24px;
+      }
+
+      h1{
+        font-size:24px;
+      }
+
+      .desc{
+        font-size:15px;
+      }
+
+      .guide-title{
+        font-size:17px;
+      }
+
+      .guide-text{
+        font-size:14px;
+      }
+
+      button{
+        width:94%;
+        font-size:16px;
+      }
+
+   .guide-image-wrap{
+  width:84%;
+  max-width:340px;
+   }
+      
+    }
+  </style>
+</head>
+
+<body>
+
+  <div class="main-card">
+
+    <h1>
+      🐶 チャッピー＆サリーの<br>
+      私にもどる対話ナビ🌿
+    </h1>
+
+    <img
+      src="https://raw.githubusercontent.com/Chappy-Sally/chappy-sally-images/main/covers/CS_hyousi.jpg"
+      class="hero-img"
+      alt="チャッピー＆サリーの表紙"
+    >
+
+    <p class="desc">
+      カードとチャッピーとの対話を通して<br>
+      今の気持ちをやさしく整理しながら<br>
+      私にもどる時間を過ごそう😊🌈
+    </p>
+
+
+    <!-- 1. 私にもどる対話ナビ -->
+    <div class="guide-box">
+
+      <div class="guide-title">
+        🔮 私にもどる対話ナビ
+      </div>
+
+      <div class="guide-text">
+        今の気持ちや気になることを入れて<br>
+        カードからやさしいヒントを受け取ります😊
+      </div>
+
+    <button
+  class="btn-tarot"
+  onclick="location.href='tarot.html'"
+>
+  タロットカードを引いてみよう
+    </button>
+      
+    </div>
+
+    <!-- 5. 私が勝手に設定した役割 -->
+<div class="guide-box">
+
+  <div class="guide-title">
+    🎭 私が勝手に設定した役割
+  </div>
+
+  <div class="guide-text">
+    父・母・夫・子ども・上司などに<br>
+    無意識に決めていた役割に気づいて<br>
+    別の視点から関係を見てみよう😊
+  </div>
+
+  <button
+    class="btn-role"
+    onclick="location.href='roles.html'"
+  >
+    私が設定した役割を見てみる
+  </button>
+
+</div>
+
+    <!-- 私のマイルールを見てみよう -->
+<div class="guide-box">
+
+  <div class="guide-title">
+    🌿 私のマイルールを見てみよう
+  </div>
+
+  <div class="guide-text">
+    自分の「ダメかも」と思うところから<br>
+    いつの間にか自分に決めていた<br>
+    「こうあるべき」に気づいてみよう😊
+  </div>
+
+  <button
+    class="btn-rule"
+    onclick="location.href='my-rule.html'"
+  >
+    私のマイルールを見てみる
+  </button>
+
+</div>
+
+  <!-- あの頃の私に会いに行く -->
+<div class="guide-box">
+
+  <div class="guide-title">
+    🌿 あの頃の私に会いに行こう
+  </div>
+
+  <div class="guide-text">
+    過去の自分の気持ちに気づいて<br>
+    今の自分から「大丈夫だよ」と<br>
+    やさしく声をかけてみよう😊
+  </div>
+
+  <button
+    class="btn-child"
+    onclick="location.href='child.html'"
+  >
+    あの頃の私に会いに行く
+  </button>
+
+</div>
+
+
+<!-- 喜びを先に味わう -->
+<div class="guide-box">
+
+  <div class="guide-title">
+    🌈 喜びを先に味わうワーク
+  </div>
+
+  <div class="guide-text">
+    願いが叶ったときの景色や気持ちを思い浮かべて<br>
+    その喜びを今、少しだけ先に味わってみよう🤭💕
+  </div>
+
+  <button
+    class="btn-joy"
+    onclick="location.href='joy.html'"
+  >
+    喜びを先に味わってみる
+  </button>
+
+</div>
+    
+
+    <!-- 2. チャッピーGPT -->
+    <div class="guide-box">
+
+      <div class="guide-title">
+        🐶 チャッピーGPTと話す 🐾
+      </div>
+
+      <div class="guide-text">
+        チャッピーGPTはあなたの話を聞きながら<br>
+        一緒に気持ちを整理する相棒です🐾
+      </div>
+
+      <button
+        class="btn-chappy"
+        onclick="openChappyGPT()"
+      >
+        チャッピーGPTと話す
+      </button>
+
+     <button
+  class="btn-chappy guide-btn"
+  onclick="toggleChappyGuide()"
+>
+  🐾 チャッピーGPTの使い方
+</button>
+
+<div
+  id="chappyGuide"
+  class="guide-image-wrap"
+  style="display:none;"
+>
+  <img
+    src="https://raw.githubusercontent.com/Chappy-Sally/chappy-sally-images/main/covers/cs_tukaikata_c.png"
+    alt="チャッピーGPTの使い方"
+    class="guide-image"
+  >
+</div>
+      
+    </div>
+
+
+    <!-- 3. 深呼吸 -->
+    <div class="guide-box">
+
+      <div class="guide-title">
+        🌿 深呼吸してみよう 🌿
+      </div>
+
+      <div class="guide-text">
+        考えすぎたときや<br>
+        まず気持ちを落ち着けたいときに😊
+      </div>
+
+      <button
+        class="btn-breath"
+        onclick="location.href='shinkokyu.html'"
+      >
+        深呼吸してみよう
+      </button>
+
+    </div>
+
+
+    <!-- 4. しあわせスイッチ -->
+    <div class="guide-box">
+
+      <div class="guide-title">
+        🌈 しあわせスイッチ 🌈
+      </div>
+
+      <div class="guide-text">
+        今ある小さなしあわせに気づいて<br>
+        気持ちをふわっと切り替えたいときに🤭
+      </div>
+
+      <button
+        class="btn-switch"
+        onclick="location.href='switch.html'"
+      >
+        しあわせスイッチを押す
+      </button>
+
+    </div>
+
+
+    <div class="important-box">
+      AIからの言葉は答えや正解ではありません😊<br>
+      今の自分を整理するヒントとして<br>
+      しっくりくる言葉だけ受け取ってね🌿
+    </div>
+
+  </div>
+
+
+  <script>
+    function openChappyGPT(){
+      const chappyGptUrl =
+        "https://chatgpt.com/g/g-6a521739bdc08191be5387b1993ba520-tiyatuhigpt";
+
+      window.open(
+        chappyGptUrl,
+        "_blank",
+        "noopener,noreferrer"
+      );
+    }
+
+    function toggleChappyGuide(){
+  const guide =
+    document.getElementById("chappyGuide");
+
+  if(guide.style.display === "none"){
+    guide.style.display = "block";
+
+    guide.scrollIntoView({
+      behavior:"smooth",
+      block:"start"
+    });
+  }else{
+    guide.style.display = "none";
+  }
+    }
+    
+  </script>
+
+</body>
+</html>
 
