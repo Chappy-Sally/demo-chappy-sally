@@ -8,7 +8,7 @@
     content="width=device-width, initial-scale=1.0"
   >
 
-  <title>私のマイルールを見てみよう</title>
+  <title>私のマイルールを見てみよう｜デモ</title>
 
   <style>
     *{
@@ -57,7 +57,7 @@
       line-height:1.8;
     }
 
-    .soft-note{
+    .demo-note{
       width:94%;
       max-width:540px;
       margin:0 auto 18px;
@@ -97,32 +97,6 @@
       text-align:center;
     }
 
-    textarea{
-      display:block;
-      width:100%;
-      min-height:110px;
-      margin:12px auto 0;
-      padding:14px 15px;
-      border:2px solid #dccbf4;
-      border-radius:19px;
-      background:#fff;
-      color:#5b3a1e;
-      font-family:inherit;
-      font-size:16px;
-      line-height:1.65;
-      resize:vertical;
-      outline:none;
-    }
-
-    textarea:focus{
-      border-color:#b79ae8;
-      box-shadow:0 0 0 4px rgba(183,154,232,0.12);
-    }
-
-    /* =========================
-       チェックBOX風
-    ========================= */
-
     .check-list{
       display:grid;
       gap:10px;
@@ -131,7 +105,6 @@
 
     .check-item{
       position:relative;
-      cursor:pointer;
     }
 
     .check-item input{
@@ -153,10 +126,6 @@
       font-size:15px;
       font-weight:bold;
       line-height:1.5;
-      transition:
-        background 0.2s,
-        border-color 0.2s,
-        transform 0.2s;
     }
 
     .check-item span::before{
@@ -170,81 +139,28 @@
       border:2px solid #d9afd0;
       border-radius:6px;
       background:#fff;
-      color:#fff;
-      font-size:15px;
-      font-weight:bold;
     }
 
-    .check-item input:checked + span{
-      color:#65428f;
-      border-color:#c9a7e8;
-      background:
-        linear-gradient(
-          135deg,
-          #fff0f6,
-          #f4ecff,
-          #eef4ff
-        );
-      transform:scale(1.01);
-    }
-
-    .check-item input:checked + span::before{
-      content:"✓";
-      color:#fff;
-      border-color:#a98bdd;
-      background:
-        linear-gradient(
-          135deg,
-          #df9fc6,
-          #ac91df,
-          #829fdf
-        );
-    }
-
-    /* =========================
-       ③だけ丸ボタン風
-    ========================= */
-
-    .choice-list{
-      display:flex;
-      justify-content:center;
-      flex-wrap:wrap;
-      gap:10px;
-      margin-top:12px;
-    }
-
-    .choice-item{
-      position:relative;
-      cursor:pointer;
-    }
-
-    .choice-item input{
-      position:absolute;
-      opacity:0;
-      pointer-events:none;
-    }
-
-    .choice-item span{
+    textarea{
       display:block;
-      padding:11px 16px;
-      border-radius:24px;
-      background:#f8e9f3;
-      color:#74533c;
-      font-size:15px;
-      font-weight:bold;
-      transition:0.2s;
+      width:100%;
+      min-height:100px;
+      margin:12px auto 0;
+      padding:14px 15px;
+      border:2px solid #dccbf4;
+      border-radius:19px;
+      background:#fff;
+      color:#5b3a1e;
+      font-family:inherit;
+      font-size:16px;
+      line-height:1.65;
+      resize:none;
     }
 
-    .choice-item input:checked + span{
-      color:#fff;
-      background:
-        linear-gradient(
-          135deg,
-          #e9a9cf,
-          #b59ae8,
-          #91a8ec
-        );
-      transform:scale(1.03);
+    .demo-stop{
+      pointer-events:none;
+      opacity:1;
+      cursor:default;
     }
 
     .button-group{
@@ -265,12 +181,7 @@
       font-size:16px;
       font-weight:bold;
       line-height:1.45;
-      cursor:pointer;
       box-shadow:0 5px 13px rgba(0,0,0,0.1);
-    }
-
-    button:active{
-      transform:scale(0.98);
     }
 
     .copy-btn{
@@ -299,15 +210,19 @@
           #ffbe73,
           #f6a65d
         );
+      cursor:pointer;
     }
 
-    .message{
-      min-height:24px;
-      margin-top:14px;
-      color:#7c5d88;
-      font-size:15px;
-      font-weight:bold;
-      line-height:1.6;
+    .bottom-note{
+      width:94%;
+      max-width:540px;
+      margin:20px auto 0;
+      padding:13px 14px;
+      color:#8a6d58;
+      background:#fff8fc;
+      border-radius:19px;
+      font-size:13px;
+      line-height:1.7;
     }
 
     @media(max-width:480px){
@@ -328,11 +243,6 @@
         font-size:14px;
       }
 
-      .choice-item span{
-        padding:9px 12px;
-        font-size:13px;
-      }
-
       textarea{
         font-size:15px;
       }
@@ -351,8 +261,7 @@
   <div class="main-card">
 
     <h1>
-      🌿 私のマイルールを<br>
-      　　　　　　　見てみよう 🌿
+      🌿 私のマイルールを見てみよう 🌿
     </h1>
 
     <p class="desc">
@@ -361,15 +270,13 @@
       「こうあるべき」を見つけてみよう😊
     </p>
 
-    <div class="soft-note">
-      自分を責めるためのワークではありません🌱<br>
-      今まで自分を守るために<br>
-      作っていたルールに気づいて<br>
-      少しやさしく見直す時間です😊
+    <div class="demo-note">
+      🌿 こちらは紹介用デモです。<br>
+      実際のワークの一部をご覧いただけます😊
     </div>
 
 
-    <!-- ① -->
+    <!-- ①だけ表示 -->
     <div class="question-box">
 
       <div class="question-title">
@@ -378,321 +285,83 @@
       </div>
 
       <p class="question-note">
-        近いものにチェックしてね😊<br>
+        本番では、近いものにチェックできます😊<br>
         複数選んでも大丈夫です🌿
       </p>
 
-      <div class="check-list">
+      <div class="check-list demo-stop">
 
         <label class="check-item">
-          <input
-            type="checkbox"
-            class="bad-check"
-            value="すぐ不安になる"
-          >
+          <input type="checkbox">
           <span>すぐ不安になる</span>
         </label>
 
         <label class="check-item">
-          <input
-            type="checkbox"
-            class="bad-check"
-            value="決めるのが遅い"
-          >
+          <input type="checkbox">
           <span>決めるのが遅い</span>
         </label>
 
         <label class="check-item">
-          <input
-            type="checkbox"
-            class="bad-check"
-            value="迷いやすい"
-          >
+          <input type="checkbox">
           <span>迷いやすい</span>
         </label>
 
         <label class="check-item">
-          <input
-            type="checkbox"
-            class="bad-check"
-            value="飽きっぽい"
-          >
+          <input type="checkbox">
           <span>飽きっぽい</span>
         </label>
 
         <label class="check-item">
-          <input
-            type="checkbox"
-            class="bad-check"
-            value="人に頼るのが苦手"
-          >
+          <input type="checkbox">
           <span>人に頼るのが苦手</span>
         </label>
 
         <label class="check-item">
-          <input
-            type="checkbox"
-            class="bad-check"
-            value="頑張りすぎる"
-          >
+          <input type="checkbox">
           <span>頑張りすぎる</span>
         </label>
 
         <label class="check-item">
-          <input
-            type="checkbox"
-            class="bad-check"
-            value="自信がない"
-          >
+          <input type="checkbox">
           <span>自信がない</span>
         </label>
 
         <label class="check-item">
-          <input
-            type="checkbox"
-            class="bad-check"
-            value="人の目が気になる"
-          >
+          <input type="checkbox">
           <span>人の目が気になる</span>
         </label>
 
       </div>
 
       <textarea
-        id="badPoint"
+        class="demo-stop"
+        readonly
         placeholder="ほかにもあれば自由に書いてね😊"
       ></textarea>
 
     </div>
 
 
-    <!-- ② -->
-    <div class="question-box">
-
-      <div class="question-title">
-        ② それは、どうしてダメだと思うの？
-      </div>
-
-      <p class="question-note">
-        「○○でなければいけないから」<br>
-        などでも大丈夫です🌿
-      </p>
-
-      <textarea
-        id="whyBad"
-        placeholder="例：いつも自信を持って、すぐに決められなければいけないと思っているから。"
-      ></textarea>
-
+    <div class="bottom-note">
+      この先も質問に答えながら、<br>
+      自分の中にあった「マイルール」に気づき、<br>
+      やさしく見直していきます🌿
     </div>
 
 
-    <!-- ③ -->
-    <div class="question-box">
-
-      <div class="question-title">
-        ③ 誰かにそう言われたことがある？
-      </div>
-
-      <p class="question-note">
-        近いものを選んでね😊<br>
-        複数選んでも大丈夫です🌿
-      </p>
-
-      <div class="choice-list">
-
-        <label class="choice-item">
-          <input
-            type="checkbox"
-            class="said-check"
-            value="父に言われたことがある"
-          >
-          <span>父</span>
-        </label>
-
-        <label class="choice-item">
-          <input
-            type="checkbox"
-            class="said-check"
-            value="母に言われたことがある"
-          >
-          <span>母</span>
-        </label>
-
-        <label class="choice-item">
-          <input
-            type="checkbox"
-            class="said-check"
-            value="家族に言われたことがある"
-          >
-          <span>家族</span>
-        </label>
-
-        <label class="choice-item">
-          <input
-            type="checkbox"
-            class="said-check"
-            value="先生に言われたことがある"
-          >
-          <span>先生</span>
-        </label>
-
-        <label class="choice-item">
-          <input
-            type="checkbox"
-            class="said-check"
-            value="友人や周りの人に言われたことがある"
-          >
-          <span>周りの人</span>
-        </label>
-
-        <label class="choice-item">
-          <input
-            type="checkbox"
-            class="said-check"
-            value="誰かに言われた覚えはない"
-          >
-          <span>覚えていない</span>
-        </label>
-
-      </div>
-
-      <textarea
-        id="saidWords"
-        placeholder="覚えている言葉や出来事があれば書いてね。何も思い出さなくても大丈夫です🌿"
-      ></textarea>
-
-    </div>
-
-
-    <!-- ④ -->
-    <div class="question-box">
-
-      <div class="question-title">
-        ④ 私は自分に、どんなマイルールを<br>
-        設定していたのかな？
-      </div>
-
-      <p class="question-note">
-        「これかも」と思うものにチェックしてね😊<br>
-        複数選んでも大丈夫です🌈
-      </p>
-
-      <div class="check-list">
-
-        <label class="check-item">
-          <input
-            type="checkbox"
-            class="rule-check"
-            value="迷ってはいけない"
-          >
-          <span>迷ってはいけない</span>
-        </label>
-
-        <label class="check-item">
-          <input
-            type="checkbox"
-            class="rule-check"
-            value="失敗してはいけない"
-          >
-          <span>失敗してはいけない</span>
-        </label>
-
-        <label class="check-item">
-          <input
-            type="checkbox"
-            class="rule-check"
-            value="人に迷惑をかけてはいけない"
-          >
-          <span>人に迷惑をかけてはいけない</span>
-        </label>
-
-        <label class="check-item">
-          <input
-            type="checkbox"
-            class="rule-check"
-            value="人に頼ってはいけない"
-          >
-          <span>人に頼ってはいけない</span>
-        </label>
-
-        <label class="check-item">
-          <input
-            type="checkbox"
-            class="rule-check"
-            value="頑張らなければいけない"
-          >
-          <span>頑張らなければいけない</span>
-        </label>
-
-        <label class="check-item">
-          <input
-            type="checkbox"
-            class="rule-check"
-            value="ちゃんとしなければいけない"
-          >
-          <span>ちゃんとしなければいけない</span>
-        </label>
-
-        <label class="check-item">
-          <input
-            type="checkbox"
-            class="rule-check"
-            value="弱音を吐いてはいけない"
-          >
-          <span>弱音を吐いてはいけない</span>
-        </label>
-
-        <label class="check-item">
-          <input
-            type="checkbox"
-            class="rule-check"
-            value="いつも自信を持っていなければいけない"
-          >
-          <span>いつも自信を持っていなければいけない</span>
-        </label>
-
-      </div>
-
-      <textarea
-        id="myRule"
-        placeholder="ほかにも「○○しなければ」「○○であるべき」があれば書いてね😊"
-      ></textarea>
-
-    </div>
-
-
-    <!-- ⑤ -->
-    <div class="question-box">
-
-      <div class="question-title">
-        ⑤ そのマイルールを少しゆるめたら、<br>
-        どんな私でいられるかな？
-      </div>
-
-      <p class="question-note">
-        まだ分からない場合は、空欄でも大丈夫です🌈
-      </p>
-
-      <textarea
-        id="freeSelf"
-        placeholder="例：迷っても大丈夫。自分のペースで考えていい。人に頼ってもいい。"
-      ></textarea>
-
-    </div>
-
-
+    <!-- 本番にあるボタンを表示 -->
     <div class="button-group">
 
       <button
-        class="copy-btn"
-        onclick="copyPrompt()"
+        class="copy-btn demo-stop"
+        type="button"
       >
         🐶 チャッピーGPTに送る文章をコピー
       </button>
 
       <button
-        class="clear-btn"
-        onclick="clearForm()"
+        class="clear-btn demo-stop"
+        type="button"
       >
         🌿 入力を消す
       </button>
@@ -700,17 +369,12 @@
     </div>
 
 
-    <div
-      id="copyMessage"
-      class="message"
-    ></div>
-
-
     <div class="button-group">
 
       <button
         class="back-btn"
-        onclick="location.href='index.html'"
+        type="button"
+        onclick="location.href='watashi-menu.html'"
       >
         🏠 メニューにもどる
       </button>
@@ -718,226 +382,6 @@
     </div>
 
   </div>
-
-
-  <script>
-
-    function getCheckedValues(className){
-
-      const selected = [];
-
-      document
-        .querySelectorAll("." + className + ":checked")
-        .forEach((checkbox) => {
-          selected.push(checkbox.value);
-        });
-
-      return selected;
-    }
-
-
-    function combineAnswers(
-      selectedValues,
-      freeText
-    ){
-
-      const answers = [];
-
-      if(selectedValues.length > 0){
-        answers.push(
-          selectedValues.join("、")
-        );
-      }
-
-      if(freeText){
-        answers.push(freeText);
-      }
-
-      if(answers.length === 0){
-        return "特になし・よく分からない";
-      }
-
-      return answers.join("、");
-    }
-
-
-    function createPrompt(){
-
-      const badChecks =
-        getCheckedValues("bad-check");
-
-      const badPointText =
-        document
-          .getElementById("badPoint")
-          .value
-          .trim();
-
-      const badPoint =
-        combineAnswers(
-          badChecks,
-          badPointText
-        );
-
-
-      const whyBad =
-        document
-          .getElementById("whyBad")
-          .value
-          .trim();
-
-
-      const saidChecks =
-        getCheckedValues("said-check");
-
-      const saidWords =
-        document
-          .getElementById("saidWords")
-          .value
-          .trim();
-
-
-      const ruleChecks =
-        getCheckedValues("rule-check");
-
-      const myRuleText =
-        document
-          .getElementById("myRule")
-          .value
-          .trim();
-
-      const myRule =
-        combineAnswers(
-          ruleChecks,
-          myRuleText
-        );
-
-
-      const freeSelf =
-        document
-          .getElementById("freeSelf")
-          .value
-          .trim();
-
-
-      const saidText =
-        saidChecks.length > 0
-          ? saidChecks.join("、")
-          : "特になし・よく分からない";
-
-
-      return `チャッピー
-自分に設定していたマイルールを見てみたよ🌿
-
-【私がダメだと思っているところ】
-${badPoint}
-
-【どうしてダメだと思う？】
-${whyBad || "特になし・よく分からない"}
-
-【誰かに言われたことがある？】
-${saidText}
-
-【覚えている言葉や出来事】
-${saidWords || "特になし・思い出せない"}
-
-【自分に設定していたマイルール】
-${myRule}
-
-【そのマイルールをゆるめたら、どんな私でいられる？】
-${freeSelf || "まだよく分からない"}
-
-自分を責めるのではなく、
-このマイルールが今まで私を守るために必要だった可能性も大切にしながら、
-本当に今の私にも必要なルールなのかをやさしく整理してください😊
-
-ダメだと思っていたところも、
-見方を変えたらどんな長所や力になるのか教えてください🌈`;
-    }
-
-
-    async function copyPrompt(){
-
-      const promptText =
-        createPrompt();
-
-      const message =
-        document.getElementById(
-          "copyMessage"
-        );
-
-      try{
-
-        await navigator.clipboard.writeText(
-          promptText
-        );
-
-        message.textContent =
-          "コピーできました😊 チャッピーGPTに送ってね🐶💕";
-
-      }catch(error){
-
-        const textarea =
-          document.createElement(
-            "textarea"
-          );
-
-        textarea.value =
-          promptText;
-
-        document.body.appendChild(
-          textarea
-        );
-
-        textarea.select();
-
-        document.execCommand(
-          "copy"
-        );
-
-        textarea.remove();
-
-        message.textContent =
-          "コピーできました😊 チャッピーGPTに送ってね🐶💕";
-      }
-    }
-
-
-    function clearForm(){
-
-      const confirmClear =
-        confirm(
-          "入力した内容を消しますか？😊"
-        );
-
-      if(!confirmClear){
-        return;
-      }
-
-      document
-        .querySelectorAll("textarea")
-        .forEach((textarea) => {
-          textarea.value = "";
-        });
-
-      document
-        .querySelectorAll(
-          'input[type="checkbox"]'
-        )
-        .forEach((checkbox) => {
-          checkbox.checked = false;
-        });
-
-      document
-        .getElementById("copyMessage")
-        .textContent = "";
-
-      window.scrollTo({
-        top:0,
-        behavior:"smooth"
-      });
-    }
-
-  </script>
 
 </body>
 </html>
