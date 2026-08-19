@@ -8,7 +8,7 @@
     content="width=device-width, initial-scale=1.0"
   >
 
-  <title>私が勝手に設定した役割｜チャッピー＆サリー</title>
+  <title>私が勝手に設定した役割｜デモ</title>
 
   <style>
     *{
@@ -48,6 +48,19 @@
       color:#6b4b2a;
       font-size:28px;
       line-height:1.45;
+    }
+
+    .demo-note{
+      width:94%;
+      max-width:540px;
+      margin:0 auto 18px;
+      padding:12px 14px;
+      color:#8a6a4a;
+      background:#fff8dc;
+      border-radius:18px;
+      font-size:14px;
+      line-height:1.7;
+      box-shadow:0 4px 10px rgba(0,0,0,0.05);
     }
 
     .intro{
@@ -108,84 +121,16 @@
       background:#f3eaff;
       font-size:15px;
       font-weight:bold;
-      cursor:pointer;
       box-shadow:none;
-    }
-
-    .relation-btn.selected{
-      border-color:#a788d8;
-      color:#65428f;
-      background:#e7d7ff;
-    }
-
-    label{
-      display:block;
-      margin:0 0 8px;
-      color:#7b5b39;
-      font-size:15px;
-      font-weight:bold;
-      line-height:1.6;
-    }
-
-    textarea,
-    input[type="text"]{
-      display:block;
-      width:100%;
-      padding:13px 14px;
-      border:2px solid #eadff3;
-      border-radius:17px;
-      outline:none;
-      color:#5b3a1e;
-      background:white;
-      font-family:inherit;
-      font-size:16px;
-      line-height:1.6;
-    }
-
-    textarea{
-      min-height:105px;
-      resize:vertical;
-    }
-
-    textarea:focus,
-    input[type="text"]:focus{
-      border-color:#bea3dd;
-      box-shadow:0 0 0 3px rgba(190,163,221,0.15);
-    }
-
-    .feeling-buttons{
-      display:flex;
-      flex-wrap:wrap;
-      justify-content:center;
-      gap:8px;
-      margin-bottom:10px;
-    }
-
-    .feeling-btn{
-      width:auto;
-      margin:0;
-      padding:9px 13px;
-      border:2px solid transparent;
-      border-radius:20px;
-      color:#78566b;
-      background:#fff0f6;
-      font-size:14px;
-      font-weight:bold;
-      cursor:pointer;
-      box-shadow:none;
-    }
-
-    .feeling-btn.selected{
-      border-color:#dd8eb1;
-      color:#9a466c;
-      background:#ffdce9;
+      pointer-events:none;
+      opacity:1;
     }
 
     .main-button{
       display:block;
       width:92%;
       max-width:390px;
-      margin:14px auto 0;
+      margin:18px auto 0;
       padding:14px 18px;
       border:none;
       border-radius:28px;
@@ -198,63 +143,14 @@
       box-shadow:0 5px 12px rgba(0,0,0,0.10);
     }
 
-    .main-button:active,
-    .relation-btn:active,
-    .feeling-btn:active{
-      transform:scale(0.98);
-    }
-
-    .btn-copy{
+    .btn-home{
       background:
         linear-gradient(
           135deg,
-          #d998b8,
-          #ad91df,
-          #829fdf
+          #ffd36f,
+          #ffb45f,
+          #ff9f78
         );
-    }
-
-    .btn-gpt{
-      background:
-        linear-gradient(
-          135deg,
-          #7088d8,
-          #9a83df,
-          #d49ada
-        );
-    }
-
-    .btn-reset{
-  color:white;
-  background:linear-gradient(
-    135deg,
-    #9fd8c9,
-    #a7c8ef,
-    #c2abe9
-  );
-}
-
-.btn-home{
-  color:white;
-  background:linear-gradient(
-    135deg,
-    #ffd36f,
-    #ffb45f,
-    #ff9f78
-  );
-}
-
-    .result-box{
-      display:none;
-      width:94%;
-      max-width:540px;
-      margin:18px auto 0;
-      padding:16px 14px;
-      color:#6f5270;
-      background:#f9f4ff;
-      border-radius:20px;
-      font-size:15px;
-      line-height:1.7;
     }
 
     .note{
@@ -297,11 +193,6 @@
         font-size:14px;
       }
 
-      textarea,
-      input[type="text"]{
-        font-size:15px;
-      }
-
       .main-button{
         width:96%;
         font-size:15px;
@@ -318,14 +209,19 @@
       🎭 私が勝手に設定した役割
     </h1>
 
+    <div class="demo-note">
+      🌿 こちらは紹介用デモです。<br>
+      実際のワークの一部をご覧いただけます😊
+    </div>
+
     <p class="intro">
       私たちは気づかないうちに<br>
       「父ならこうしてくれるはず」<br>
-      「夫ならわかってくれるはず」など<br>
+      「パートナーならわかってくれるはず」など<br>
       相手の役割を決めていることがあります😊<br><br>
 
-      その設定を少し見直して<br>
-      別の視点から関係を眺めてみよう🌿
+      その設定に気づいて<br>
+      別の視点から関係を眺めてみるワークです🌿
     </p>
 
     <div class="example-box">
@@ -339,8 +235,6 @@
       感じていたのかもしれません。
     </div>
 
-
-    <!-- 1. 相手を選ぶ -->
     <div class="step-box">
 
       <div class="step-title">
@@ -352,7 +246,6 @@
         <button
           type="button"
           class="relation-btn"
-          onclick="selectRelation(this, '父')"
         >
           父
         </button>
@@ -360,7 +253,6 @@
         <button
           type="button"
           class="relation-btn"
-          onclick="selectRelation(this, '母')"
         >
           母
         </button>
@@ -368,7 +260,6 @@
         <button
           type="button"
           class="relation-btn"
-          onclick="selectRelation(this, '夫・妻・パートナー')"
         >
           パートナー
         </button>
@@ -376,246 +267,26 @@
         <button
           type="button"
           class="relation-btn"
-          onclick="selectRelation(this, '子ども')"
+          aria-label="その他の相手"
         >
-          子ども
-        </button>
-
-        <button
-          type="button"
-          class="relation-btn"
-          onclick="selectRelation(this, '上司')"
-        >
-          上司
-        </button>
-
-        <button
-          type="button"
-          class="relation-btn"
-          onclick="selectRelation(this, '部下')"
-        >
-          部下
-        </button>
-
-        <button
-          type="button"
-          class="relation-btn"
-          onclick="selectRelation(this, '同僚')"
-        >
-          同僚
-        </button>
-
-        <button
-          type="button"
-          class="relation-btn"
-          onclick="selectRelation(this, '友人')"
-        >
-          友人
-        </button>
-
-         <button
-          type="button"
-          class="relation-btn"
-          onclick="selectRelation(this, 'お金')"
-       >
-          お金
-         </button>
-
-        <button
-          type="button"
-          class="relation-btn"
-          onclick="selectRelation(this, 'その他')"
-        >
-           そ の 他 
+          　　　　
         </button>
 
       </div>
 
-      <input
-        type="text"
-        id="otherRelation"
-        placeholder="その他の場合は、相手との関係を入力してね"
-        style="display:none; margin-top:12px;"
-      >
+      <div class="note">
+        デモでは、この先の質問には進みません😊
+      </div>
 
     </div>
-
-
-    <!-- 2. 設定した役割 -->
-    <div class="step-box">
-
-      <div class="step-title">
-        ② その相手や存在は、私にとって<br>
-           どんな役割だと思っていた？
-      </div>
-
-      <label for="roleText">
-        「〇〇してくれる人」など<br>
-        思いつくまま書いてね😊
-      </label>
-
-      <textarea
-        id="roleText"
-        placeholder="例：困ったときに私を守ってくれる人"
-      ></textarea>
-
-    </div>
-
-
-    <!-- 3. 期待していたこと -->
-    <div class="step-box">
-
-      <div class="step-title">
-  ③ その相手や存在に、<br>
-  何をしてほしかった？
-      </div>
-      
-      <textarea
-        id="wantedText"
-        placeholder="例：私の話を聞いて、味方になってほしかった"
-      ></textarea>
-
-    </div>
-
-
-    <!-- 4. 感じたこと -->
-    <div class="step-box">
-
-      <div class="step-title">
-        ④ 役割どおりでなかったとき<br>
-           どう感じた？（複数回答OK）
-      </div>
-
-      <div class="feeling-buttons">
-
-        <button
-          type="button"
-          class="feeling-btn"
-          onclick="toggleFeeling(this, '愛されていない')"
-        >
-          愛されていない
-        </button>
-
-        <button
-          type="button"
-          class="feeling-btn"
-          onclick="toggleFeeling(this, '嫌われている')"
-        >
-          嫌われている
-        </button>
-
-        <button
-          type="button"
-          class="feeling-btn"
-          onclick="toggleFeeling(this, '大切にされていない')"
-        >
-          大切にされていない
-        </button>
-
-        <button
-          type="button"
-          class="feeling-btn"
-          onclick="toggleFeeling(this, 'わかってもらえない')"
-        >
-          わかってもらえない
-        </button>
-
-        <button
-          type="button"
-          class="feeling-btn"
-          onclick="toggleFeeling(this, '寂しい')"
-        >
-          寂しい
-        </button>
-
-        <button
-          type="button"
-          class="feeling-btn"
-          onclick="toggleFeeling(this, '悲しい')"
-        >
-          悲しい
-        </button>
-
-        <button
-          type="button"
-          class="feeling-btn"
-          onclick="toggleFeeling(this, '腹が立つ')"
-        >
-          腹が立つ
-        </button>
-
-        <button
-          type="button"
-          class="feeling-btn"
-          onclick="toggleFeeling(this, '私が悪いと思った')"
-        >
-          私が悪いと思った
-        </button>
-
-      </div>
-
-      <textarea
-        id="feelingText"
-        placeholder="ほかに感じたことがあれば書いてね"
-      ></textarea>
-
-    </div>
-
-
-    <!-- 5. 別の視点 -->
-    <div class="step-box">
-
-      <div class="step-title">
-        ⑤ 相手にその役割を外してみたら<br>
-        どう見えるかな？
-      </div>
-
-      <label for="viewText">
-        まだわからない場合は<br>
-        空欄でも大丈夫だよ🌿
-      </label>
-
-      <textarea
-        id="viewText"
-        placeholder="例：父も、自分のことで精いっぱいだったのかもしれない"
-      ></textarea>
-
-    </div>
-
-
-    <button
-      class="main-button btn-copy"
-      onclick="copyForChappy()"
-    >
-      🐶 チャッピーGPTに送る文章をコピー
-    </button>
-
-    <button
-      class="main-button btn-gpt"
-      onclick="openChappyGPT()"
-    >
-      🐾 チャッピーGPTを開く
-    </button>
-
-    <div
-      id="resultMessage"
-      class="result-box"
-    ></div>
-
-    <button
-      class="main-button btn-reset"
-      onclick="resetForm()"
-    >
-      もう一度やってみる
-    </button>
 
     <button
       class="main-button btn-home"
-      onclick="location.href='index.html'"
+      type="button"
+      onclick="location.href='watashi-menu.html'"
     >
-      ホームにもどる
+      🏠 メニューにもどる
     </button>
-
 
     <div class="note">
       相手や自分を責めるためのものではありません😊<br>
@@ -625,282 +296,5 @@
 
   </div>
 
-
-  <script>
-    let selectedRelation = "";
-    let selectedFeelings = [];
-
-
-    function selectRelation(button, relation){
-
-      selectedRelation = relation;
-
-      const buttons =
-        document.querySelectorAll(".relation-btn");
-
-      buttons.forEach(function(btn){
-        btn.classList.remove("selected");
-      });
-
-      button.classList.add("selected");
-
-      const otherInput =
-        document.getElementById("otherRelation");
-
-      if(relation === "その他"){
-        otherInput.style.display = "block";
-        otherInput.focus();
-      }else{
-        otherInput.style.display = "none";
-        otherInput.value = "";
-      }
-    }
-
-
-    function toggleFeeling(button, feeling){
-
-      const index =
-        selectedFeelings.indexOf(feeling);
-
-      if(index === -1){
-        selectedFeelings.push(feeling);
-        button.classList.add("selected");
-      }else{
-        selectedFeelings.splice(index, 1);
-        button.classList.remove("selected");
-      }
-    }
-
-
-    function getRelation(){
-
-      if(selectedRelation === "その他"){
-
-        const otherRelation =
-          document
-            .getElementById("otherRelation")
-            .value
-            .trim();
-
-        return otherRelation || "その他の人";
-      }
-
-      return selectedRelation;
-    }
-
-
-    async function copyForChappy(){
-
-      const relation = getRelation();
-
-      const roleText =
-        document
-          .getElementById("roleText")
-          .value
-          .trim();
-
-      const wantedText =
-        document
-          .getElementById("wantedText")
-          .value
-          .trim();
-
-      const feelingText =
-        document
-          .getElementById("feelingText")
-          .value
-          .trim();
-
-      const viewText =
-        document
-          .getElementById("viewText")
-          .value
-          .trim();
-
-
-      if(!relation){
-
-        showMessage(
-          "まずは、役割を設定していた相手を選んでね😊"
-        );
-
-        return;
-      }
-
-
-      if(!roleText){
-
-        showMessage(
-          "その人に、どんな役割を設定していたか書いてみてね🌿"
-        );
-
-        return;
-      }
-
-
-      let feelings = "";
-
-      if(selectedFeelings.length > 0){
-        feelings = selectedFeelings.join("、");
-      }
-
-      if(feelingText){
-
-        if(feelings){
-          feelings += "、" + feelingText;
-        }else{
-          feelings = feelingText;
-        }
-      }
-
-      if(!feelings){
-        feelings = "まだよくわからない";
-      }
-
-
-      const copyText =
-`「私が勝手に設定した役割」を見直してみたよ🌿
-
-【相手】
-${relation}
-
-【私がその人に設定していた役割】
-${roleText}
-
-【本当はその人にしてほしかったこと】
-${wantedText || "まだよくわからない"}
-
-【役割どおりでなかったときに感じたこと】
-${feelings}
-
-【役割を外して見てみたときに思ったこと】
-${viewText || "まだ別の視点は思いつかない"}
-
-相手や私を責めるのではなく、
-私が無意識に作っていた設定に気づきながら、
-別の視点からやさしく整理するのを手伝ってください😊
-
-「愛されていない」「嫌われている」と
-決めつけなくてもよい見方があれば教えてください🌈`;
-
-
-      try{
-
-        await navigator.clipboard.writeText(copyText);
-
-        showMessage(
-          "コピーできたよ😊<br>" +
-          "次にチャッピーGPTを開いて<br>" +
-          "貼り付けて送ってね🐾"
-        );
-
-      }catch(error){
-
-        fallbackCopy(copyText);
-      }
-    }
-
-
-    function fallbackCopy(text){
-
-      const textarea =
-        document.createElement("textarea");
-
-      textarea.value = text;
-      textarea.style.position = "fixed";
-      textarea.style.opacity = "0";
-
-      document.body.appendChild(textarea);
-
-      textarea.focus();
-      textarea.select();
-
-      try{
-
-        document.execCommand("copy");
-
-        showMessage(
-          "コピーできたよ😊<br>" +
-          "チャッピーGPTに貼り付けてね🐾"
-        );
-
-      }catch(error){
-
-        showMessage(
-          "コピーできなかったみたい💦<br>" +
-          "もう一度ボタンを押してみてね"
-        );
-      }
-
-      document.body.removeChild(textarea);
-    }
-
-
-    function openChappyGPT(){
-
-      const chappyGptUrl =
-        "https://chatgpt.com/g/g-6a521739bdc08191be5387b1993ba520-tiyatuhigpt";
-
-      window.open(
-        chappyGptUrl,
-        "_blank",
-        "noopener,noreferrer"
-      );
-    }
-
-
-    function showMessage(message){
-
-      const result =
-        document.getElementById("resultMessage");
-
-      result.innerHTML = message;
-      result.style.display = "block";
-
-      result.scrollIntoView({
-        behavior:"smooth",
-        block:"center"
-      });
-    }
-
-
-    function resetForm(){
-
-      selectedRelation = "";
-      selectedFeelings = [];
-
-      document
-        .querySelectorAll(".relation-btn")
-        .forEach(function(button){
-          button.classList.remove("selected");
-        });
-
-      document
-        .querySelectorAll(".feeling-btn")
-        .forEach(function(button){
-          button.classList.remove("selected");
-        });
-
-      document.getElementById("otherRelation").value = "";
-      document.getElementById("otherRelation").style.display = "none";
-      document.getElementById("roleText").value = "";
-      document.getElementById("wantedText").value = "";
-      document.getElementById("feelingText").value = "";
-      document.getElementById("viewText").value = "";
-
-      const result =
-        document.getElementById("resultMessage");
-
-      result.innerHTML = "";
-      result.style.display = "none";
-
-      window.scrollTo({
-        top:0,
-        behavior:"smooth"
-      });
-    }
-  </script>
-
 </body>
 </html>
-
