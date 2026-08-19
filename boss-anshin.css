@@ -1,0 +1,340 @@
+body{
+  font-family:"Hiragino Kaku Gothic ProN", sans-serif;
+  text-align:center;
+  background:#fff0f5;
+  padding:20px 14px 40px;
+  color:#5b3a1e;
+  margin:0;
+}
+
+.main-card{
+  width:92%;
+  max-width:620px;
+  margin:0 auto;
+  background:rgba(255,255,255,0.92);
+  border-radius:28px;
+  padding:26px 16px 30px;
+  box-shadow:0 6px 18px rgba(0,0,0,0.08);
+}
+
+h1{
+  font-size:28px;
+  color:#6b4b2a;
+  line-height:1.4;
+  margin:0 0 14px;
+}
+
+.desc{
+  font-size:16px;
+  line-height:1.8;
+  color:#7b5b39;
+  margin-bottom:22px;
+}
+
+.input-box{
+  width:92%;
+  max-width:500px;
+  margin:18px auto 0;
+  padding:16px 14px;
+  background:#fff8fc;
+  border-radius:22px;
+  box-shadow:0 4px 10px rgba(0,0,0,0.05);
+  text-align:left;
+}
+
+label{
+  display:block;
+  font-size:17px;
+  font-weight:bold;
+  color:#6b4b2a;
+  margin-bottom:8px;
+}
+
+input,textarea{
+  width:100%;
+  padding:14px;
+  border-radius:18px;
+  border:2px solid #d8c0ff;
+  font-size:16px;
+  box-sizing:border-box;
+  background:white;
+  font-family:inherit;
+}
+
+textarea{
+  height:130px;
+  resize:vertical;
+}
+
+button{
+  padding:14px 22px;
+  margin:14px 6px 0;
+  border:none;
+  border-radius:28px;
+  color:white;
+  font-size:17px;
+  cursor:pointer;
+  box-shadow:0 4px 10px rgba(0,0,0,0.08);
+}
+
+.boss-btn{
+  background:linear-gradient(135deg,#233b6e,#3f5f9a,#6d85c4);
+}
+
+.copy-btn{
+  background:linear-gradient(135deg,#f6b1c7,#eab0f5);
+}
+
+.copy-btn:disabled{
+  opacity:0.4;
+  cursor:not-allowed;
+}
+
+.back-btn{
+  background:linear-gradient(135deg,#ffbe73,#f6a65d);
+}
+
+.cards-area{
+  display:flex;
+  justify-content:center;
+  flex-wrap:wrap;
+  gap:28px 24px;
+  margin:26px auto 0;
+}
+
+.mini-card{
+  width:220px;
+  background:transparent;
+  border:none;
+  border-radius:0;
+  padding:0;
+  box-shadow:none;
+  box-sizing:border-box;
+  text-align:center;
+}
+
+.mini-card img{
+  width:220px;
+  max-width:100%;
+  border-radius:14px;
+  box-shadow:0 6px 14px rgba(0,0,0,0.18);
+  background:white;
+  display:block;
+}
+
+.card-label{
+  font-size:18px;
+  color:#6b4b2a;
+  margin-top:10px;
+  line-height:1.5;
+  white-space:normal;
+}
+
+.card-name{
+  font-size:20px;
+  font-weight:normal;
+  color:#5b3a1e;
+  margin-top:2px;
+  line-height:1.5;
+  white-space:normal;
+}
+
+.note{
+  font-size:13px;
+  line-height:1.7;
+  color:#8a7f76;
+  margin:20px auto 0;
+  width:90%;
+}
+
+.button-group{
+  margin-top:10px;
+}
+
+.hidden{
+  display:none !important;
+}
+
+@media(max-width:480px){
+  h1{font-size:24px;}
+  button{font-size:15px;}
+  .desc{font-size:15px;}
+
+  .cards-area{
+    gap:28px 24px;
+  }
+
+  .mini-card{
+    width:42%;
+  }
+
+  .mini-card img{
+    width:100%;
+  }
+
+  .card-label{
+    font-size:18px;
+  }
+
+  .card-name{
+    font-size:20px;
+  }
+}
+
+/* チェック項目を横並びにする */
+.check-list{
+  display:flex;
+  flex-direction:column;
+  gap:14px;
+  margin-top:14px;
+}
+
+.check-item{
+  display:flex;
+  align-items:center;
+  justify-content:flex-start;
+  gap:12px;
+  width:100%;
+  font-size:18px;
+  font-weight:bold;
+  color:#6b4b2a;
+  text-align:left;
+  cursor:pointer;
+}
+
+.check-item input[type="checkbox"]{
+  width:22px;
+  height:22px;
+  margin:0;
+  flex-shrink:0;
+  accent-color:#8f86e8;
+}
+
+.check-item span{
+  display:block;
+  line-height:1.5;
+}
+
+
+/* カードを引くボタンを横並びにする */
+#inputScreen .button-group{
+  display:flex;
+  justify-content:center;
+  align-items:stretch;
+  flex-wrap:nowrap;
+  gap:12px;
+  margin-top:20px;
+}
+
+#inputScreen .boss-btn{
+  width:48%;
+  min-width:0;
+  margin:0;
+  padding:14px 8px;
+  font-size:16px;
+  line-height:1.5;
+}
+
+
+/* スマホがかなり細い場合だけ縦並び */
+@media(max-width:360px){
+  #inputScreen .button-group{
+    flex-wrap:wrap;
+  }
+
+  #inputScreen .boss-btn{
+    width:100%;
+  }
+}
+
+/* チェックボックスだけ、普通の入力欄の設定を解除 */
+.check-item{
+  display:flex !important;
+  align-items:center !important;
+  justify-content:flex-start !important;
+  gap:10px !important;
+  width:100% !important;
+  margin:0 !important;
+  padding:4px 0 !important;
+  text-align:left !important;
+}
+
+.check-item input[type="checkbox"]{
+  width:22px !important;
+  height:22px !important;
+  min-width:22px !important;
+  max-width:22px !important;
+  margin:0 !important;
+  padding:0 !important;
+  flex:0 0 22px !important;
+  border-radius:4px !important;
+}
+
+.check-item span{
+  display:inline !important;
+  width:auto !important;
+  margin:0 !important;
+  line-height:1.5 !important;
+  font-size:18px !important;
+  font-weight:bold;
+  color:#6b4b2a;
+}
+
+.check-list{
+  display:flex;
+  flex-direction:column;
+  gap:12px;
+}
+
+.draw-area{
+  width:92%;
+  max-width:500px;
+  margin:20px auto 0;
+  padding:18px 14px;
+  background:#fffafd;
+  border-radius:24px;
+  box-shadow:0 4px 12px rgba(0,0,0,0.06);
+  box-sizing:border-box;
+}
+
+.draw-title{
+  font-size:20px;
+  font-weight:bold;
+  color:#6b4b2a;
+  margin-bottom:6px;
+}
+
+.draw-note{
+  font-size:15px;
+  color:#8a7563;
+  margin:0 0 14px;
+}
+
+.draw-buttons{
+  display:flex;
+  justify-content:center;
+  gap:14px;
+}
+
+.draw-buttons .boss-btn{
+  width:46%;
+  min-width:0;
+  margin:0;
+  padding:14px 8px;
+  font-size:18px;
+  background:linear-gradient(
+    135deg,
+    #d9c7f6,
+    #b9a2eb,
+    #9d8adf
+  );
+}
+
+.memory-btn{
+  background:linear-gradient(
+    135deg,
+    #b7df8a,
+    #8fcf78
+  );
+  color:white;
+}

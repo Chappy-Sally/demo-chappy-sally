@@ -1,0 +1,710 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">
+
+  <meta
+    name="viewport"
+    content="width=device-width, initial-scale=1, viewport-fit=cover"
+  >
+
+  <title>安心できない私へ｜安心にもどるナビ</title>
+
+  <style>
+    * {
+      box-sizing: border-box;
+    }
+
+    :root {
+      --brown: #6b4b32;
+      --brown-light: #8a6a50;
+      --card-bg: rgba(255, 255, 255, 0.96);
+      --cream: #fff9e8;
+      --cream-border: #f3df9f;
+      --pink: #e994a9;
+      --purple: #9a94f2;
+      --green: #799667;
+      --shadow: 0 10px 28px rgba(126, 84, 64, 0.12);
+    }
+
+    html {
+      scroll-behavior: smooth;
+    }
+
+    body {
+      margin: 0;
+      min-height: 100vh;
+      font-family:
+        "Hiragino Kaku Gothic ProN",
+        "Yu Gothic",
+        "Meiryo",
+        sans-serif;
+      color: var(--brown);
+      background:
+        radial-gradient(
+          circle at top,
+          rgba(255, 255, 255, 0.96),
+          rgba(255, 240, 246, 0.97) 52%,
+          rgba(239, 248, 255, 0.98)
+        );
+      line-height: 1.8;
+    }
+
+    button,
+    textarea {
+      font: inherit;
+    }
+
+    .page {
+      width: min(100%, 760px);
+      margin: 0 auto;
+      padding:
+        max(22px, env(safe-area-inset-top))
+        16px
+        max(48px, env(safe-area-inset-bottom));
+    }
+
+    .main-card {
+      width: 100%;
+      padding: 22px 18px 34px;
+      background: var(--card-bg);
+      border-radius: 32px;
+      box-shadow: 0 12px 34px rgba(126, 84, 64, 0.12);
+    }
+
+    .hero {
+      text-align: center;
+      margin-bottom: 22px;
+    }
+
+    .hero-image,
+    .ending-image {
+      display: block;
+      width: 100%;
+      border-radius: 26px;
+      box-shadow: var(--shadow);
+      object-fit: cover;
+    }
+
+    .hero-image {
+      max-height: 480px;
+    }
+
+    h1 {
+      margin: 26px 0 10px;
+      font-size: clamp(27px, 7vw, 39px);
+      line-height: 1.4;
+      letter-spacing: 0.03em;
+      color: #6d482c;
+    }
+
+    .lead {
+      margin: 0 auto;
+      max-width: 650px;
+      font-size: 16px;
+      color: var(--brown-light);
+      line-height: 2;
+    }
+
+    .message-box {
+      margin: 22px 0;
+      padding: 21px 18px;
+      text-align: center;
+      background: var(--cream);
+      border: 1px solid var(--cream-border);
+      border-radius: 22px;
+      box-shadow: 0 7px 20px rgba(156, 118, 72, 0.08);
+    }
+
+    .message-box strong {
+      display: block;
+      margin-bottom: 7px;
+      font-size: 18px;
+      color: #76512f;
+    }
+
+    .question-card {
+      margin: 18px 0;
+      padding: 22px 18px;
+      background: #fff;
+      border: 1px solid rgba(223, 175, 190, 0.22);
+      border-radius: 24px;
+      box-shadow: var(--shadow);
+    }
+
+    .question-number {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      min-width: 42px;
+      height: 42px;
+      margin-bottom: 11px;
+      border-radius: 50%;
+      background: #fce6ed;
+      color: #b96881;
+      font-weight: 700;
+    }
+
+    .question-card label {
+      display: block;
+      margin-bottom: 11px;
+      font-size: 18px;
+      font-weight: 700;
+      line-height: 1.7;
+    }
+
+    .hint {
+      margin: 0 0 13px;
+      color: #93745d;
+      font-size: 14px;
+      line-height: 1.75;
+    }
+
+    textarea {
+      display: block;
+      width: 100%;
+      min-height: 124px;
+      resize: vertical;
+      border: 2px solid #ecd5dd;
+      border-radius: 18px;
+      padding: 15px;
+      color: var(--brown);
+      background: #fffdfd;
+      outline: none;
+      line-height: 1.7;
+      transition:
+        border-color 0.2s ease,
+        box-shadow 0.2s ease;
+    }
+
+    textarea:focus {
+      border-color: #dda2b5;
+      box-shadow: 0 0 0 4px rgba(221, 162, 181, 0.14);
+    }
+
+    textarea::placeholder {
+      color: #b6a094;
+    }
+
+    /* 4つのボタンを縦一列 */
+    .button-list {
+      display: flex;
+      flex-direction: column;
+      gap: 14px;
+      margin-top: 28px;
+    }
+
+    .main-button,
+    .copy-button,
+    .retry-button,
+    .home-button {
+      display: block;
+      width: 100%;
+      min-height: 72px;
+      appearance: none;
+      border-radius: 999px;
+      padding: 17px 18px;
+      font-size: 18px;
+      font-weight: 700;
+      line-height: 1.5;
+      cursor: pointer;
+      transition:
+        transform 0.15s ease,
+        box-shadow 0.15s ease;
+    }
+
+    .main-button {
+      border: none;
+      color: #fff;
+      background:
+        linear-gradient(
+          135deg,
+          var(--pink),
+          var(--purple)
+        );
+      box-shadow: 0 10px 22px rgba(173, 126, 210, 0.28);
+    }
+
+    .copy-button {
+      border: 2px solid #dca2b3;
+      color: #a55d73;
+      background: #fff;
+      box-shadow: 0 8px 18px rgba(185, 121, 143, 0.12);
+    }
+
+    .retry-button {
+      border: none;
+      color: #fff;
+      background: linear-gradient(135deg, #87d9d2, #aaa0ef);
+      box-shadow: 0 10px 22px rgba(127, 150, 210, 0.25);
+    }
+
+    .home-button {
+      border: none;
+      color: #fff;
+      background: linear-gradient(135deg, #ffd15f, #ff9568);
+      box-shadow: 0 10px 22px rgba(239, 153, 92, 0.25);
+    }
+
+    .main-button:active,
+    .copy-button:active,
+    .retry-button:active,
+    .home-button:active {
+      transform: scale(0.98);
+    }
+
+    .status {
+      min-height: 30px;
+      margin-top: 12px;
+      text-align: center;
+      font-weight: 700;
+      color: var(--green);
+    }
+
+    .ending {
+      display: none;
+      margin-top: 30px;
+      animation: fadeIn 0.65s ease;
+    }
+
+    .ending.show {
+      display: block;
+    }
+
+    .ending-card {
+      margin-top: 20px;
+      padding: 24px 19px;
+      text-align: center;
+      background: #fff;
+      border-radius: 24px;
+      box-shadow: var(--shadow);
+    }
+
+    .ending-card h2 {
+      margin: 0 0 12px;
+      font-size: 25px;
+      color: #6a492e;
+    }
+
+    .ending-card p {
+      margin: 7px 0;
+    }
+
+    .affirmation {
+      margin-top: 18px;
+      padding: 17px;
+      background: #fff8dd;
+      border-radius: 18px;
+      font-weight: 700;
+      color: #76512f;
+      line-height: 1.9;
+    }
+
+    .small-note {
+      margin: 20px 0 0;
+      font-size: 13px;
+      color: #9a8373;
+      text-align: center;
+    }
+
+    @keyframes fadeIn {
+      from {
+        opacity: 0;
+        transform: translateY(14px);
+      }
+
+      to {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }
+
+    @media (min-width: 700px) {
+      .page {
+        padding-left: 28px;
+        padding-right: 28px;
+      }
+
+      .main-card {
+        padding: 30px 28px 40px;
+      }
+
+      .question-card {
+        padding: 26px;
+      }
+    }
+
+    @media (max-width: 420px) {
+      .main-card {
+        padding: 18px 14px 30px;
+      }
+
+      .main-button,
+      .copy-button,
+      .retry-button,
+      .home-button {
+        min-height: 68px;
+        padding: 15px 12px;
+        font-size: 17px;
+      }
+    }
+  </style>
+</head>
+
+<body>
+  <main class="page">
+    <div class="main-card">
+
+      <section class="hero">
+        <img
+          class="hero-image"
+          src="https://raw.githubusercontent.com/Chappy-Sally/chappy-sally-images/main/anshin/cs_Syonbori.png"
+          alt="しょんぼりしているチャッピーとサリー"
+        >
+
+        <h1>🌱 安心できない私へ</h1>
+
+        <p class="lead">
+          今見つかった思い込みやクセの奥には、<br>
+          安心したいのに、安心できずにいる私が<br>
+          いるのかもしれません😊
+        </p>
+      </section>
+
+      <div class="message-box">
+        <strong>答えを急がなくて大丈夫です🌿</strong>
+
+        うまく書こうとしなくて大丈夫。<br>
+        今のあなたが感じられる範囲で、<br>
+        やさしく心に聞いてみてね😊
+      </div>
+
+      <section class="question-card">
+        <div class="question-number">1</div>
+
+        <label for="belief">
+          「安心できない私」は<br>
+           どんなことで安心できないと思う？
+        </label>
+
+        <p class="hint">
+          例：人からどう思われるか気になるとき<br>
+          失敗しそうなとき、お金が減るとき<br>
+          ひとりになりそうなとき
+        </p>
+
+        <textarea
+          id="belief"
+          placeholder="安心できない場面を書いてみてね😊"
+        ></textarea>
+      </section>
+
+      <section class="question-card">
+        <div class="question-number">2</div>
+
+        <label for="fear">
+          その奥で「安心できない私」は、<br>
+          何を怖がっていると思う？
+        </label>
+
+        <p class="hint">
+          例：ひとりになること、嫌われること、<br>
+          失敗すること、生活できなくなること
+        </p>
+
+        <textarea
+          id="fear"
+          placeholder="本当は何が怖かったのかな？"
+        ></textarea>
+      </section>
+
+      <section class="question-card">
+        <div class="question-number">3</div>
+
+        <label for="wantedSafety">
+          その私は、本当はどんな安心が欲しかった？
+        </label>
+
+        <p class="hint">
+          例：味方でいてほしかった、大丈夫と言ってほしかった、<br>
+          そのままの私を受け止めてほしかった
+        </p>
+
+        <textarea
+          id="wantedSafety"
+          placeholder="本当は、どうしてほしかったのかな？"
+        ></textarea>
+      </section>
+
+      <section class="question-card">
+        <div class="question-number">4</div>
+
+        <label for="kindWords">
+          今の私から「安心できない私」へ、<br>
+          どんな言葉をかけてあげたい？
+        </label>
+
+        <p class="hint">
+          例：大丈夫だよ。私はあなたの味方だよ。<br>
+          もう一人で頑張らなくていいよ。
+        </p>
+
+        <textarea
+          id="kindWords"
+          placeholder="今のあなたから、やさしい言葉を届けてみてね🌈"
+        ></textarea>
+      </section>
+
+      <!-- 4つのボタン -->
+      <div class="button-list">
+
+        <button
+          type="button"
+          class="main-button"
+          id="completeButton"
+        >
+          安心を受け取る 🌈
+        </button>
+
+        <button
+          type="button"
+          class="copy-button"
+          id="copyButton"
+        >
+          🐶 チャッピーGPTに送る文章をコピー
+        </button>
+
+        <button
+          type="button"
+          class="retry-button"
+          id="clearButton"
+        >
+          もう一度やってみる
+        </button>
+
+        <button
+          type="button"
+          class="home-button"
+          id="homeButton"
+        >
+          ホームにもどる
+        </button>
+
+      </div>
+
+      <div
+        class="status"
+        id="status"
+        aria-live="polite"
+      ></div>
+
+      <section
+        class="ending"
+        id="ending"
+      >
+        <img
+          class="ending-image"
+          src="https://raw.githubusercontent.com/Chappy-Sally/chappy-sally-images/main/anshin/cs_Suyasuya.png"
+          alt="安心して眠るチャッピーとサリー"
+        >
+
+        <div class="ending-card">
+          <h2>🌈 安心できた私へ</h2>
+
+          <p>
+            よくここまで心を見つめてきたね😊
+          </p>
+
+          <p>
+            思い込みやクセを責めなくて大丈夫。
+          </p>
+
+          <p>
+            その奥には、ただ<br>
+            <strong>本当は安心したかった私</strong>がいただけ🌱
+          </p>
+
+          <p>
+            今日からは、その私に<br>
+            「大丈夫だよ」と<br>
+            やさしく声をかけてあげよう。
+          </p>
+
+          <div class="affirmation">
+            私は大丈夫😊<br>
+            私は私の味方。<br>
+            安心して、一歩ずつ進んでいい🌈
+          </div>
+        </div>
+      </section>
+
+      <p class="small-note">
+        書いた内容は、この端末の中に一時保存されます🌿
+      </p>
+
+    </div>
+  </main>
+
+  <script>
+    const STORAGE_KEY = "anshinMeAnswers";
+
+    const fields = {
+      belief: document.getElementById("belief"),
+      fear: document.getElementById("fear"),
+      wantedSafety: document.getElementById("wantedSafety"),
+      kindWords: document.getElementById("kindWords")
+    };
+
+    const ending = document.getElementById("ending");
+    const status = document.getElementById("status");
+    const completeButton = document.getElementById("completeButton");
+    const copyButton = document.getElementById("copyButton");
+    const clearButton = document.getElementById("clearButton");
+    const homeButton = document.getElementById("homeButton");
+
+    function getAnswers() {
+      return {
+        belief: fields.belief.value.trim(),
+        fear: fields.fear.value.trim(),
+        wantedSafety: fields.wantedSafety.value.trim(),
+        kindWords: fields.kindWords.value.trim()
+      };
+    }
+
+    function saveAnswers() {
+      try {
+        localStorage.setItem(
+          STORAGE_KEY,
+          JSON.stringify(getAnswers())
+        );
+      } catch (error) {
+        console.warn("保存できませんでした。", error);
+      }
+    }
+
+    function loadAnswers() {
+      try {
+        const saved = localStorage.getItem(STORAGE_KEY);
+
+        if (!saved) {
+          return;
+        }
+
+        const answers = JSON.parse(saved);
+
+        fields.belief.value = answers.belief || "";
+        fields.fear.value = answers.fear || "";
+        fields.wantedSafety.value = answers.wantedSafety || "";
+        fields.kindWords.value = answers.kindWords || "";
+      } catch (error) {
+        console.warn("保存内容を読み込めませんでした。", error);
+      }
+    }
+
+    function createCopyText() {
+      const answers = getAnswers();
+
+      return `安心できない私に会いに行ってみたよ🌿
+
+【 私は、どんなことで安心できないと思う？】
+${answers.belief || "（まだ思いつかない）"}
+
+【その奥で、安心できない私が怖がっていること】
+${answers.fear || "（まだ思いつかない）"}
+
+【本当は欲しかった安心】
+${answers.wantedSafety || "（まだ思いつかない）"}
+
+【今の私からかけてあげたい言葉】
+${answers.kindWords || "（まだ思いつかない）"}
+
+思い込みやクセを責めるのではなく、
+その奥にいる「本当は安心したかった私」に寄り添いながら、
+やさしく安心に戻るお手伝いをしてください😊🌈`;
+    }
+
+    async function copyAnswers() {
+      saveAnswers();
+
+      try {
+        await navigator.clipboard.writeText(createCopyText());
+        showStatus("文章をコピーしました😊");
+      } catch (error) {
+        const temp = document.createElement("textarea");
+
+        temp.value = createCopyText();
+        temp.style.position = "fixed";
+        temp.style.opacity = "0";
+
+        document.body.appendChild(temp);
+        temp.select();
+        document.execCommand("copy");
+        temp.remove();
+
+        showStatus("文章をコピーしました😊");
+      }
+    }
+
+    function showStatus(message) {
+      status.textContent = message;
+
+      window.setTimeout(() => {
+        status.textContent = "";
+      }, 3000);
+    }
+
+    function showEnding() {
+      saveAnswers();
+      ending.classList.add("show");
+
+      window.setTimeout(() => {
+        ending.scrollIntoView({
+          behavior: "smooth",
+          block: "start"
+        });
+      }, 100);
+
+      showStatus("安心を受け取りました🌈");
+    }
+
+    function clearAnswers() {
+      const shouldClear = window.confirm(
+        "入力した内容を消して、もう一度はじめますか？"
+      );
+
+      if (!shouldClear) {
+        return;
+      }
+
+      Object.values(fields).forEach((field) => {
+        field.value = "";
+      });
+
+      localStorage.removeItem(STORAGE_KEY);
+      ending.classList.remove("show");
+
+      window.scrollTo({
+        top: 0,
+        behavior: "smooth"
+      });
+
+      showStatus("最初から始められます🌿");
+    }
+
+    function goHome() {
+      window.location.href = "index.html";
+    }
+
+    Object.values(fields).forEach((field) => {
+      field.addEventListener("input", saveAnswers);
+    });
+
+    completeButton.addEventListener("click", showEnding);
+    copyButton.addEventListener("click", copyAnswers);
+    clearButton.addEventListener("click", clearAnswers);
+    homeButton.addEventListener("click", goHome);
+
+    loadAnswers();
+  </script>
+</body>
+</html>
