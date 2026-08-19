@@ -42,29 +42,29 @@
       max-width: 720px;
       margin: 0 auto;
       padding:
-        calc(24px + env(safe-area-inset-top))
-        18px
+        calc(20px + env(safe-area-inset-top))
+        16px
         calc(32px + env(safe-area-inset-bottom));
     }
 
     .main-card {
-      background: rgba(255, 255, 255, 0.92);
+      background: rgba(255, 255, 255, 0.94);
       border-radius: 28px;
-      padding: 28px 20px;
+      padding: 18px 16px 28px;
       box-shadow:
         0 10px 30px rgba(120, 90, 70, 0.10);
     }
 
-    h1 {
-      margin: 0;
-      text-align: center;
-      font-size: 1.65rem;
-      line-height: 1.6;
-      color: #76503d;
+    .hero-image {
+      width: 100%;
+      display: block;
+      border-radius: 22px;
+      box-shadow:
+        0 6px 18px rgba(110, 80, 60, 0.10);
     }
 
     .lead {
-      margin: 18px 0 26px;
+      margin: 22px 0 26px;
       text-align: center;
       line-height: 1.9;
       font-size: 0.98rem;
@@ -143,11 +143,11 @@
 
     @media (min-width: 600px) {
       .main-card {
-        padding: 36px 32px;
+        padding: 24px 24px 34px;
       }
 
-      h1 {
-        font-size: 1.9rem;
+      .lead {
+        font-size: 1.02rem;
       }
     }
   </style>
@@ -159,17 +159,18 @@
 
     <main class="main-card">
 
-      <h1>
-        🐶 チャッピー＆サリーの<br>
-        デモンストレーション🌿
-      </h1>
+      <img
+        src="images/cs_Demo.png"
+        alt="チャッピー＆サリー demoメニュー"
+        class="hero-image"
+      >
 
       <p class="lead">
         チャッピー＆サリーのアプリが<br>
         どんなものなのか、少しだけご紹介します😊<br><br>
 
-        気になるデモをタップして<br>
-        ご覧ください✨
+        気になるアプリをタップして<br>
+        デモをご覧ください✨
       </p>
 
       <div class="demo-list">
@@ -196,7 +197,7 @@
           </span>
 
           <span class="demo-sub">
-            モヤモヤや不安を一緒にひもとく時間
+            モヤモヤや不安をやさしく整理する時間
           </span>
         </a>
 
@@ -209,23 +210,22 @@
           </span>
 
           <span class="demo-sub">
-            アプリとチャッピーGPTをまとめてご紹介
+            ナビやチャッピーGPTをまとめてご紹介
           </span>
         </a>
 
       </div>
 
       <div class="note">
-        このページは<br>
-        ご紹介用のデモンストレーションです。<br>
-        実際の商品内容の一部を<br>
+        🌿 こちらはご紹介用のデモンストレーションです。<br>
+        実際の商品内容の一部を、
         体験・閲覧できるようにしています😊
       </div>
 
     </main>
 
     <footer>
-      Chappy & Sally 🌿
+      Chappy & Sally 🐾
     </footer>
 
   </div>
