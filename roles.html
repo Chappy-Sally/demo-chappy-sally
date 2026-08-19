@@ -339,7 +339,7 @@
     <button
       class="main-button btn-home"
       type="button"
-      onclick="location.href='watashi-menu.html'"
+      onclick="goBackMenu()"
     >
       🏠 メニューにもどる
     </button>
@@ -352,5 +352,22 @@
 
   </div>
 
+<script>
+function goBackMenu(){
+
+  const params =
+    new URLSearchParams(window.location.search);
+
+  const from =
+    params.get("from");
+
+  if(from === "set"){
+    location.href = "anshin-set-menu.html";
+  }else{
+    location.href = "watashi-menu.html";
+  }
+}
+</script>
+  
 </body>
 </html>
