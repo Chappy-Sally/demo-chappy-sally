@@ -9,13 +9,52 @@
   >
 
   <title>
-    あの頃の私に会いに行こう｜チャッピー＆サリー
+    あの頃の私に会いに行こう｜Demo
   </title>
 
   <link
     rel="stylesheet"
     href="child-style.css"
   >
+
+  <style>
+    .demo-note{
+      width:94%;
+      max-width:540px;
+      margin:0 auto 18px;
+      padding:14px 16px;
+      background:#fff8dc;
+      border-radius:20px;
+      color:#80684d;
+      font-size:14px;
+      line-height:1.75;
+      text-align:center;
+    }
+
+    .demo-next{
+      width:94%;
+      max-width:540px;
+      margin:18px auto 0;
+      padding:14px 16px;
+      background:#fff8fc;
+      border-radius:20px;
+      color:#8a6d58;
+      font-size:14px;
+      line-height:1.8;
+      text-align:center;
+    }
+
+    .demo-stop{
+      pointer-events:none !important;
+      opacity:1 !important;
+      cursor:default !important;
+    }
+
+    textarea[readonly]{
+      opacity:1;
+      background:#fff;
+    }
+  </style>
 </head>
 
 <body>
@@ -43,6 +82,12 @@
     >
 
 
+    <div class="demo-note">
+      🌿 こちらは紹介用Demoです。<br>
+      実際のワークの一部をご覧いただけます😊
+    </div>
+
+
     <div class="message-box">
       はっきり思い出せなくても大丈夫😊<br>
 
@@ -54,7 +99,7 @@
     </div>
 
 
-    <!-- 1 -->
+    <!-- 1問目だけ表示 -->
     <div class="step-box">
 
       <div class="step-title">
@@ -68,193 +113,24 @@
       </p>
 
       <textarea
-        id="currentConcern"
+        class="demo-stop"
+        readonly
         placeholder="例：誰かにわかってもらえないと感じる"
       ></textarea>
 
     </div>
 
 
-    <!-- 2 -->
-    <div class="step-box">
-
-      <div class="step-title">
-        ② 似たような気持ちを<br>
-        子どもの頃や過去に感じたことはある？
-      </div>
-
-      <p class="step-text">
-        思い出せなかったら<br>
-        「よくわからない」でも大丈夫です🌿
-      </p>
-
-      <textarea
-        id="pastMemory"
-        placeholder="例：子どもの頃、話を聞いてもらえなかった気がする"
-      ></textarea>
-
+    <div class="demo-next">
+      本番では、このあとも質問に答えながら<br>
+      あの頃の気持ちや、<br>
+      本当はしてほしかったこと、<br>
+      聞きたかった言葉などを<br>
+      やさしく見つけていきます🌿
     </div>
 
 
-    <!-- 3 -->
-    <div class="step-box">
-
-      <div class="step-title">
-        ③ あの頃の私は、どんな気持ちだった？
-      </div>
-
-      <p class="step-text">
-        複数選んで大丈夫だよ😊
-      </p>
-
-      <div class="feeling-buttons">
-
-        <button
-          type="button"
-          class="feeling-btn"
-          data-feeling="寂しかった"
-          onclick="toggleFeeling(this)"
-        >
-          寂しかった
-        </button>
-
-        <button
-          type="button"
-          class="feeling-btn"
-          data-feeling="悲しかった"
-          onclick="toggleFeeling(this)"
-        >
-          悲しかった
-        </button>
-
-        <button
-          type="button"
-          class="feeling-btn"
-          data-feeling="怖かった"
-          onclick="toggleFeeling(this)"
-        >
-          怖かった
-        </button>
-
-        <button
-          type="button"
-          class="feeling-btn"
-          data-feeling="悔しかった"
-          onclick="toggleFeeling(this)"
-        >
-          悔しかった
-        </button>
-
-        <button
-          type="button"
-          class="feeling-btn"
-          data-feeling="我慢していた"
-          onclick="toggleFeeling(this)"
-        >
-          我慢していた
-        </button>
-
-        <button
-          type="button"
-          class="feeling-btn"
-          data-feeling="わかってほしかった"
-          onclick="toggleFeeling(this)"
-        >
-          わかってほしかった
-        </button>
-
-        <button
-          type="button"
-          class="feeling-btn"
-          data-feeling="守ってほしかった"
-          onclick="toggleFeeling(this)"
-        >
-          守ってほしかった
-        </button>
-
-        <button
-          type="button"
-          class="feeling-btn"
-          data-feeling="愛されたかった"
-          onclick="toggleFeeling(this)"
-        >
-          愛されたかった
-        </button>
-
-      </div>
-
-      <textarea
-        id="otherFeeling"
-        placeholder="ほかに浮かんだ気持ちがあれば書いてね"
-      ></textarea>
-
-    </div>
-
-
-    <!-- 4 -->
-    <div class="step-box">
-
-      <div class="step-title">
-        ④ あの頃の私は<br>
-        本当は何をしてほしかった？
-      </div>
-
-      <textarea
-        id="wantedAction"
-        placeholder="例：話を聞いてほしかった、そばにいてほしかった"
-      ></textarea>
-
-    </div>
-
-
-    <!-- 5 -->
-    <div class="step-box">
-
-      <div class="step-title">
-        ⑤ あの頃の私は<br>
-        どんな言葉を聞きたかった？
-      </div>
-
-      <textarea
-        id="wantedWords"
-        placeholder="例：大丈夫だよ、あなたは悪くないよ"
-      ></textarea>
-
-    </div>
-
-
-    <!-- 6 -->
-    <div class="step-box">
-
-      <div class="step-title">
-        ⑥ 今のあなたが、あの頃の自分に<br>
-        やさしく声をかけるとしたら？
-      </div>
-
-      <textarea
-        id="messageToPast"
-        placeholder="例：よく頑張ったね。もう一人で我慢しなくていいよ"
-      ></textarea>
-
-    </div>
-
-
-    <!-- 7 -->
-    <div class="step-box">
-
-      <div class="step-title">
-        ⑦ 今の自分にしてあげたい<br>
-        一番やさしいことは何かな？
-      </div>
-
-      <textarea
-        id="gentleAction"
-        placeholder="例：今日はゆっくり休む、自分の気持ちを否定しない"
-      ></textarea>
-
-    </div>
-
-
+    <!-- 本番にある言葉の部分 -->
     <div class="words-box">
 
       <div class="words-title">
@@ -271,25 +147,27 @@
     </div>
 
 
+    <!-- ボタン類 -->
     <div class="action-buttons">
 
       <button
-        class="btn-copy"
-        onclick="copyForChappy()"
+        class="btn-copy demo-stop"
+        type="button"
       >
         🐶 チャッピーGPTへ送る文章をコピー
       </button>
 
       <button
-        class="btn-clear"
-        onclick="clearAll()"
+        class="btn-clear demo-stop"
+        type="button"
       >
         書いた内容を消す
       </button>
 
       <button
         class="btn-back"
-        onclick="location.href='index.html'"
+        type="button"
+        onclick="goBackMenu()"
       >
         🏠 メニューにもどる
       </button>
@@ -298,9 +176,9 @@
 
 
     <div class="small-note">
-      このワークだけで終わっても大丈夫です😊<br>
-      もっと話したくなったら<br>
-      コピーした文章をチャッピーGPTへ送ってね🐾
+      Demoでは入力やコピーはできません😊<br>
+      本番では、ワークの内容を<br>
+      チャッピーGPTへ送って対話できます🐾
     </div>
 
 
@@ -318,7 +196,24 @@
   </div>
 
 
-  <script src="child-script.js"></script>
+  <script>
+    function goBackMenu(){
+
+      const params =
+        new URLSearchParams(window.location.search);
+
+      const from =
+        params.get("from");
+
+      if(from === "set"){
+        location.href =
+          "anshin-set-menu.html";
+      }else{
+        location.href =
+          "watashi-menu.html";
+      }
+    }
+  </script>
 
 </body>
 </html>
