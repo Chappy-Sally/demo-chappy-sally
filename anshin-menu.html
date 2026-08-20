@@ -8,9 +8,12 @@
     content="width=device-width, initial-scale=1.0"
   >
 
-  <title>チャッピー＆サリーの安心ナビ</title>
+  <title>チャッピー＆サリーの安心ナビ｜Demo</title>
 
-  <link rel="stylesheet" href="bossindex.css">
+  <link
+    rel="stylesheet"
+    href="bossindex-anshin.css"
+  >
 </head>
 
 <body>
@@ -35,6 +38,13 @@
     </p>
 
 
+    <!-- Demoのお知らせ -->
+    <div class="important-box">
+      🌿 こちらは紹介用Demoです。<br>
+      一部の画面や使い方をご覧いただけます😊
+    </div>
+
+
     <!-- 1. 安心に戻る -->
     <div class="guide-box">
 
@@ -57,24 +67,31 @@
 
     </div>
 
-   <div class="menu-card">
-   <h3>🌱 安心できない私へ</h3>
 
-  <p>
-    思い込みやクセの奥にいる、
-    「安心したかった私」にやさしく会いに行くワークです😊
-  </p>
+    <!-- 2. 安心できない私へ -->
+    <div class="guide-box">
 
-   <button
-  class="btn-purple"
-  onclick="location.href='anshin-me.html'"
->
-  安心できない私に会いに行く🌱
-   </button>
-     
-   </div>
+      <div class="guide-title">
+        🌱 安心できない私へ
+      </div>
 
-    <!-- 2. チャッピーGPT -->
+      <div class="guide-text">
+        思い込みやクセの奥にいる<br>
+        「安心したかった私」に<br>
+        やさしく会いに行くワークです😊
+      </div>
+
+      <button
+        class="btn-purple"
+        onclick="location.href='anshin-me.html'"
+      >
+        安心できない私に会いに行く🌱
+      </button>
+
+    </div>
+
+
+    <!-- 3. チャッピーGPT -->
     <div class="guide-box">
 
       <div class="guide-title">
@@ -88,35 +105,22 @@
 
       <button
         class="btn-chappy"
-        onclick="openChappyGPT()"
+        onclick="location.href='demo-chappy.html'"
       >
         チャッピーGPTと話す
       </button>
 
-    <button
-  class="btn-chappy guide-btn"
-  onclick="toggleChappyGuide()"
->
-  🐾 チャッピーGPTの使い方
-</button>
+      <button
+        class="btn-chappy guide-btn"
+        onclick="location.href='demo-chappy-guide.html'"
+      >
+        🐾 チャッピーGPTの使い方
+      </button>
 
-<div
-  id="chappyGuide"
-  class="guide-image-wrap"
-  style="display:none;"
->
-  
-  <img
-    src="https://raw.githubusercontent.com/Chappy-Sally/chappy-sally-images/main/covers/cs_tukaikata_c.png"
-    alt="チャッピーGPTの使い方"
-    class="guide-image"
-  >
-</div>
-      
     </div>
 
 
-    <!-- 3. 深呼吸 -->
+    <!-- 4. 深呼吸 -->
     <div class="guide-box">
 
       <div class="guide-title">
@@ -130,7 +134,7 @@
 
       <button
         class="btn-breath"
-        onclick="location.href='shinkokyu.html'"
+        onclick="location.href='demo-shinkokyu.html'"
       >
         深呼吸してみよう
       </button>
@@ -138,7 +142,7 @@
     </div>
 
 
-    <!-- 4. しあわせスイッチ -->
+    <!-- 5. しあわせスイッチ -->
     <div class="guide-box">
 
       <div class="guide-title">
@@ -152,9 +156,22 @@
 
       <button
         class="btn-switch"
-        onclick="location.href='switch.html'"
+        onclick="location.href='demo-switch.html'"
       >
         しあわせスイッチを押す
+      </button>
+
+    </div>
+
+
+    <!-- Demoトップへ -->
+    <div class="guide-box">
+
+      <button
+        class="btn-purple"
+        onclick="location.href='index.html'"
+      >
+        🏠 Demoメニューにもどる
       </button>
 
     </div>
@@ -169,37 +186,5 @@
 
   </div>
 
-
-  <script>
-    function openChappyGPT(){
-      const chappyGptUrl =
-        "https://chatgpt.com/g/g-6a521739bdc08191be5387b1993ba520-tiyatuhigpt";
-
-      window.open(
-        chappyGptUrl,
-        "_blank",
-        "noopener,noreferrer"
-      );
-    }
-    
-  function toggleChappyGuide(){
-  const guide =
-    document.getElementById("chappyGuide");
-
-  if(guide.style.display === "none"){
-    guide.style.display = "block";
-
-    guide.scrollIntoView({
-      behavior:"smooth",
-      block:"start"
-    });
-  }else{
-    guide.style.display = "none";
-  }
-  }
-    
-  </script>
-
 </body>
 </html>
-
