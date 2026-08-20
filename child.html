@@ -1,0 +1,324 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">
+
+  <meta
+    name="viewport"
+    content="width=device-width, initial-scale=1.0"
+  >
+
+  <title>
+    あの頃の私に会いに行こう｜チャッピー＆サリー
+  </title>
+
+  <link
+    rel="stylesheet"
+    href="child-style.css"
+  >
+</head>
+
+<body>
+
+  <div class="main-card">
+
+    <h1>
+      🌿 あの頃の私に<br>
+      「大丈夫だよ😊」って会いに行こう
+    </h1>
+
+    <p class="intro">
+      過去の原因を探したり<br>
+      誰かを責めたりするためではありません😊<br>
+
+      あの頃の自分の気持ちに気づいて<br>
+      今の自分が、やさしく迎えに行くためのワークです🌈
+    </p>
+
+
+    <img
+      src="https://raw.githubusercontent.com/Chappy-Sally/chappy-sally-images/main/covers/CS_omoide.png"
+      alt="思い出を見つめるチャッピーとサリー"
+      class="hero-image"
+    >
+
+
+    <div class="message-box">
+      はっきり思い出せなくても大丈夫😊<br>
+
+      「なんとなく寂しかった」<br>
+      「本当はこうしてほしかった」<br>
+
+      そんな小さな気持ちに気づくだけでも<br>
+      私にもどる一歩になります🌿
+    </div>
+
+
+    <!-- 1 -->
+    <div class="step-box">
+
+      <div class="step-title">
+        ① 今、心に引っかかっていることは<br>
+        何かな？
+      </div>
+
+      <p class="step-text">
+        最近あったことでも<br>
+        昔から気になっていることでも大丈夫だよ😊
+      </p>
+
+      <textarea
+        id="currentConcern"
+        placeholder="例：誰かにわかってもらえないと感じる"
+      ></textarea>
+
+    </div>
+
+
+    <!-- 2 -->
+    <div class="step-box">
+
+      <div class="step-title">
+        ② 似たような気持ちを<br>
+        子どもの頃や過去に感じたことはある？
+      </div>
+
+      <p class="step-text">
+        思い出せなかったら<br>
+        「よくわからない」でも大丈夫です🌿
+      </p>
+
+      <textarea
+        id="pastMemory"
+        placeholder="例：子どもの頃、話を聞いてもらえなかった気がする"
+      ></textarea>
+
+    </div>
+
+
+    <!-- 3 -->
+    <div class="step-box">
+
+      <div class="step-title">
+        ③ あの頃の私は、どんな気持ちだった？
+      </div>
+
+      <p class="step-text">
+        複数選んで大丈夫だよ😊
+      </p>
+
+      <div class="feeling-buttons">
+
+        <button
+          type="button"
+          class="feeling-btn"
+          data-feeling="寂しかった"
+          onclick="toggleFeeling(this)"
+        >
+          寂しかった
+        </button>
+
+        <button
+          type="button"
+          class="feeling-btn"
+          data-feeling="悲しかった"
+          onclick="toggleFeeling(this)"
+        >
+          悲しかった
+        </button>
+
+        <button
+          type="button"
+          class="feeling-btn"
+          data-feeling="怖かった"
+          onclick="toggleFeeling(this)"
+        >
+          怖かった
+        </button>
+
+        <button
+          type="button"
+          class="feeling-btn"
+          data-feeling="悔しかった"
+          onclick="toggleFeeling(this)"
+        >
+          悔しかった
+        </button>
+
+        <button
+          type="button"
+          class="feeling-btn"
+          data-feeling="我慢していた"
+          onclick="toggleFeeling(this)"
+        >
+          我慢していた
+        </button>
+
+        <button
+          type="button"
+          class="feeling-btn"
+          data-feeling="わかってほしかった"
+          onclick="toggleFeeling(this)"
+        >
+          わかってほしかった
+        </button>
+
+        <button
+          type="button"
+          class="feeling-btn"
+          data-feeling="守ってほしかった"
+          onclick="toggleFeeling(this)"
+        >
+          守ってほしかった
+        </button>
+
+        <button
+          type="button"
+          class="feeling-btn"
+          data-feeling="愛されたかった"
+          onclick="toggleFeeling(this)"
+        >
+          愛されたかった
+        </button>
+
+      </div>
+
+      <textarea
+        id="otherFeeling"
+        placeholder="ほかに浮かんだ気持ちがあれば書いてね"
+      ></textarea>
+
+    </div>
+
+
+    <!-- 4 -->
+    <div class="step-box">
+
+      <div class="step-title">
+        ④ あの頃の私は<br>
+        本当は何をしてほしかった？
+      </div>
+
+      <textarea
+        id="wantedAction"
+        placeholder="例：話を聞いてほしかった、そばにいてほしかった"
+      ></textarea>
+
+    </div>
+
+
+    <!-- 5 -->
+    <div class="step-box">
+
+      <div class="step-title">
+        ⑤ あの頃の私は<br>
+        どんな言葉を聞きたかった？
+      </div>
+
+      <textarea
+        id="wantedWords"
+        placeholder="例：大丈夫だよ、あなたは悪くないよ"
+      ></textarea>
+
+    </div>
+
+
+    <!-- 6 -->
+    <div class="step-box">
+
+      <div class="step-title">
+        ⑥ 今のあなたが、あの頃の自分に<br>
+        やさしく声をかけるとしたら？
+      </div>
+
+      <textarea
+        id="messageToPast"
+        placeholder="例：よく頑張ったね。もう一人で我慢しなくていいよ"
+      ></textarea>
+
+    </div>
+
+
+    <!-- 7 -->
+    <div class="step-box">
+
+      <div class="step-title">
+        ⑦ 今の自分にしてあげたい<br>
+        一番やさしいことは何かな？
+      </div>
+
+      <textarea
+        id="gentleAction"
+        placeholder="例：今日はゆっくり休む、自分の気持ちを否定しない"
+      ></textarea>
+
+    </div>
+
+
+    <div class="words-box">
+
+      <div class="words-title">
+        🌿 あの頃の私へ
+      </div>
+
+      <p class="words-text">
+        大丈夫だよ😊<br>
+        よく頑張ってきたね。<br>
+        あなたの気持ちは、ちゃんとここにあるよ。<br>
+        もう一人で抱えなくても大丈夫🌈
+      </p>
+
+    </div>
+
+
+    <div class="action-buttons">
+
+      <button
+        class="btn-copy"
+        onclick="copyForChappy()"
+      >
+        🐶 チャッピーGPTへ送る文章をコピー
+      </button>
+
+      <button
+        class="btn-clear"
+        onclick="clearAll()"
+      >
+        書いた内容を消す
+      </button>
+
+      <button
+        class="btn-back"
+        onclick="location.href='index.html'"
+      >
+        🏠 メニューにもどる
+      </button>
+
+    </div>
+
+
+    <div class="small-note">
+      このワークだけで終わっても大丈夫です😊<br>
+      もっと話したくなったら<br>
+      コピーした文章をチャッピーGPTへ送ってね🐾
+    </div>
+
+
+    <div class="important-box">
+      無理に過去を思い出さなくても大丈夫です😊<br>
+      答えたくない質問は、飛ばして大丈夫。<br><br>
+
+      思い出してつらくなったときは、ワークを止めて<br>
+      深呼吸したり、今見えるものに意識を戻してね🌿<br><br>
+
+      AIからの言葉は答えや正解ではありません。<br>
+      しっくりくる言葉だけ受け取ってね😊
+    </div>
+
+  </div>
+
+
+  <script src="child-script.js"></script>
+
+</body>
+</html>
