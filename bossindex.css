@@ -179,6 +179,33 @@ button:active{
   line-height:1.65;
 }
 
+.btn-role{
+  background:linear-gradient(
+    135deg,
+    #d7a6e8,
+    #b99be8,
+    #8fa9e8
+  );
+}
+
+.btn-child{
+  background:linear-gradient(
+    135deg,
+    #e7b3c8,
+    #c7a9e8,
+    #9eb8e8
+  );
+}
+
+.btn-joy{
+  background:linear-gradient(
+    135deg,
+    #f6c86f,
+    #f2a0b9,
+    #b59ce8
+  );
+}
+
 @media (max-width:480px){
   body{
     padding:16px 10px 32px;
