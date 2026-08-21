@@ -1,0 +1,227 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">
+
+  <meta
+    name="viewport"
+    content="width=device-width, initial-scale=1.0"
+  >
+
+  <title>チャッピーGPTの使い方｜チャッピー＆サリー</title>
+
+  <style>
+    *{
+      box-sizing:border-box;
+    }
+
+    body{
+      margin:0;
+      padding:20px 14px 40px;
+      font-family:
+        "Hiragino Kaku Gothic ProN",
+        "Yu Gothic",
+        sans-serif;
+      text-align:center;
+      color:#5b3a1e;
+      background:
+        linear-gradient(
+          180deg,
+          #fff7fb 0%,
+          #f3efff 100%
+        );
+    }
+
+    .main-card{
+      width:94%;
+      max-width:620px;
+      margin:0 auto;
+      padding:22px 14px 28px;
+      background:rgba(255,255,255,0.94);
+      border-radius:28px;
+      box-shadow:
+        0 6px 18px rgba(0,0,0,0.08);
+    }
+
+    h1{
+      margin:0 0 12px;
+      color:#6b4b2a;
+      font-size:28px;
+      line-height:1.45;
+    }
+
+    .intro{
+      margin:0 auto 18px;
+      color:#7b5b39;
+      font-size:16px;
+      line-height:1.7;
+    }
+
+    .image-box{
+      width:94%;
+      max-width:500px;
+      margin:0 auto 18px;
+      padding:10px;
+      background:#ffffff;
+      border-radius:22px;
+      box-shadow:
+        0 6px 16px rgba(0,0,0,0.10);
+    }
+
+    .guide-image{
+      display:block;
+      width:100%;
+      height:auto;
+      border-radius:16px;
+    }
+
+    .message-box{
+      width:94%;
+      max-width:500px;
+      margin:16px auto;
+      padding:14px 16px;
+      background:#fff8fc;
+      border-radius:20px;
+      color:#8a6d58;
+      font-size:15px;
+      line-height:1.75;
+    }
+
+    button{
+      width:90%;
+      max-width:340px;
+      margin:8px auto 0;
+      padding:15px 18px;
+      border:none;
+      border-radius:30px;
+      color:white;
+      font-size:17px;
+      font-weight:bold;
+      cursor:pointer;
+      box-shadow:
+        0 4px 12px rgba(0,0,0,0.08);
+    }
+
+    button:active{
+      transform:scale(0.98);
+    }
+
+    .btn-chappy{
+      background:
+        linear-gradient(
+          135deg,
+          #7088d8,
+          #9a83df,
+          #d49ada
+        );
+    }
+
+    .btn-back{
+      background:
+        linear-gradient(
+          135deg,
+          #d9b4d8,
+          #b9addf,
+          #9eb8e8
+        );
+    }
+
+    @media(max-width:480px){
+
+      body{
+        padding:16px 10px 32px;
+      }
+
+      .main-card{
+        width:96%;
+        padding:20px 10px 24px;
+      }
+
+      h1{
+        font-size:24px;
+      }
+
+      .intro{
+        font-size:15px;
+      }
+
+      .message-box{
+        font-size:14px;
+      }
+
+      button{
+        width:94%;
+        font-size:16px;
+      }
+    }
+  </style>
+</head>
+
+<body>
+
+  <div class="main-card">
+
+    <h1>
+      🐶 チャッピーGPTの使い方 🐾
+    </h1>
+
+    <p class="intro">
+      チャッピーGPTと話すときの<br>
+      基本的な使い方をご案内します😊
+    </p>
+
+
+    <div class="image-box">
+
+      <img
+        src="https://raw.githubusercontent.com/Chappy-Sally/chappy-sally-images/main/covers/cs_tukaikata_c.png"
+        alt="チャッピーGPTの使い方"
+        class="guide-image"
+      >
+
+    </div>
+
+
+    <div class="message-box">
+      うまく話そうとしなくても大丈夫😊<br>
+      今思っていることを<br>
+      そのままチャッピーに話してみてね🐾
+    </div>
+
+
+    <button
+      class="btn-chappy"
+      type="button"
+      onclick="openChappyGPT()"
+    >
+      🐶 チャッピーGPTと話す
+    </button>
+
+
+    <button
+      class="btn-back"
+      type="button"
+      onclick="history.back()"
+    >
+      🏠 前の画面にもどる
+    </button>
+
+  </div>
+
+
+  <script>
+    function openChappyGPT(){
+
+      const chappyGptUrl =
+        "https://chatgpt.com/g/g-6a521739bdc08191be5387b1993ba520-tiyatuhigpt";
+
+      window.open(
+        chappyGptUrl,
+        "_blank",
+        "noopener,noreferrer"
+      );
+    }
+  </script>
+
+</body>
+</html>
