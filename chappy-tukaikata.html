@@ -8,7 +8,7 @@
     content="width=device-width, initial-scale=1.0"
   >
 
-  <title>チャッピーGPTの使い方｜チャッピー＆サリー</title>
+  <title>チャッピーGPTの使い方｜Demo</title>
 
   <style>
     *{
@@ -55,6 +55,18 @@
       color:#7b5b39;
       font-size:16px;
       line-height:1.7;
+    }
+
+    .demo-note{
+      width:94%;
+      max-width:500px;
+      margin:0 auto 18px;
+      padding:14px 16px;
+      background:#fff8dc;
+      border-radius:20px;
+      color:#80684d;
+      font-size:14px;
+      line-height:1.75;
     }
 
     .image-box{
@@ -126,6 +138,12 @@
         );
     }
 
+    .demo-stop{
+      pointer-events:none;
+      opacity:1;
+      cursor:default;
+    }
+
     @media(max-width:480px){
 
       body{
@@ -145,7 +163,8 @@
         font-size:15px;
       }
 
-      .message-box{
+      .message-box,
+      .demo-note{
         font-size:14px;
       }
 
@@ -171,6 +190,12 @@
     </p>
 
 
+    <div class="demo-note">
+      🌿 こちらは紹介用Demoです。<br>
+      使い方の一部をご覧いただけます😊
+    </div>
+
+
     <div class="image-box">
 
       <img
@@ -190,36 +215,51 @@
 
 
     <button
-      class="btn-chappy"
+      class="btn-chappy demo-stop"
       type="button"
-      onclick="openChappyGPT()"
     >
       🐶 チャッピーGPTと話す
     </button>
 
 
+    <div class="demo-note">
+      本番では、このボタンから<br>
+      チャッピーGPTが開きます🐾
+    </div>
+
+
     <button
       class="btn-back"
       type="button"
-      onclick="history.back()"
+      onclick="goBackMenu()"
     >
-      🏠 前の画面にもどる
+      🏠 メニューにもどる
     </button>
 
   </div>
 
 
   <script>
-    function openChappyGPT(){
+    function goBackMenu(){
 
-      const chappyGptUrl =
-        "https://chatgpt.com/g/g-6a521739bdc08191be5387b1993ba520-tiyatuhigpt";
+      const params =
+        new URLSearchParams(window.location.search);
 
-      window.open(
-        chappyGptUrl,
-        "_blank",
-        "noopener,noreferrer"
-      );
+      const from =
+        params.get("from");
+
+      if(from === "set"){
+        location.href =
+          "anshin-set-menu.html";
+
+      }else if(from === "anshin"){
+        location.href =
+          "anshin-menu.html";
+
+      }else{
+        location.href =
+          "watashi-menu.html";
+      }
     }
   </script>
 
