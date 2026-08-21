@@ -1,0 +1,213 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">
+
+  <meta
+    name="viewport"
+    content="width=device-width, initial-scale=1.0"
+  >
+
+  <title>チャッピーGPT｜Demo</title>
+
+  <style>
+    *{
+      box-sizing:border-box;
+    }
+
+    body{
+      margin:0;
+      padding:20px 14px 40px;
+      font-family:
+        "Hiragino Kaku Gothic ProN",
+        "Yu Gothic",
+        sans-serif;
+      text-align:center;
+      color:#5b3a1e;
+      background:
+        linear-gradient(
+          180deg,
+          #fff7fb 0%,
+          #f3efff 100%
+        );
+    }
+
+    .main-card{
+      width:94%;
+      max-width:620px;
+      margin:0 auto;
+      padding:22px 14px 28px;
+      background:rgba(255,255,255,0.94);
+      border-radius:28px;
+      box-shadow:
+        0 6px 18px rgba(0,0,0,0.08);
+    }
+
+    h1{
+      margin:0 0 12px;
+      color:#6b4b2a;
+      font-size:28px;
+      line-height:1.45;
+    }
+
+    .intro{
+      margin:0 auto 18px;
+      color:#7b5b39;
+      font-size:16px;
+      line-height:1.7;
+    }
+
+    .demo-box{
+      width:94%;
+      max-width:500px;
+      margin:0 auto 20px;
+      padding:10px;
+      background:#ffffff;
+      border-radius:22px;
+      box-shadow:
+        0 6px 16px rgba(0,0,0,0.10);
+    }
+
+    .demo-image{
+      display:block;
+      width:100%;
+      height:auto;
+      border-radius:16px;
+    }
+
+    .note-box{
+      width:94%;
+      max-width:500px;
+      margin:16px auto;
+      padding:14px;
+      background:#fff8dc;
+      border-radius:20px;
+      color:#80684d;
+      font-size:15px;
+      line-height:1.7;
+    }
+
+    button{
+      width:90%;
+      max-width:340px;
+      margin:8px auto 0;
+      padding:15px 18px;
+      border:none;
+      border-radius:30px;
+      color:white;
+      font-size:17px;
+      font-weight:bold;
+      cursor:pointer;
+      background:
+        linear-gradient(
+          135deg,
+          #7088d8,
+          #9a83df,
+          #d49ada
+        );
+      box-shadow:
+        0 4px 12px rgba(0,0,0,0.08);
+    }
+
+    button:active{
+      transform:scale(0.98);
+    }
+
+    @media(max-width:480px){
+
+      body{
+        padding:16px 10px 32px;
+      }
+
+      .main-card{
+        width:96%;
+        padding:20px 10px 24px;
+      }
+
+      h1{
+        font-size:24px;
+      }
+
+      .intro{
+        font-size:15px;
+      }
+
+      .note-box{
+        font-size:14px;
+      }
+
+      button{
+        width:94%;
+        font-size:16px;
+      }
+    }
+  </style>
+</head>
+
+<body>
+
+  <div class="main-card">
+
+    <h1>
+      🐶 チャッピーGPTと話す 🐾
+    </h1>
+
+    <p class="intro">
+      チャッピーGPTは<br>
+      あなたの話を聞きながら<br>
+      一緒に気持ちを整理する相棒です😊
+    </p>
+
+
+    <div class="demo-box">
+
+      <img
+        src="images/demo-chappy.png"
+        alt="チャッピーGPT 紹介用Demo画面"
+        class="demo-image"
+      >
+
+    </div>
+
+
+    <div class="note-box">
+      🌿 こちらは紹介用Demo画面です。<br>
+      本番では、チャッピーGPTが開きます😊
+    </div>
+
+
+    <button
+      type="button"
+      onclick="goBackMenu()"
+    >
+      🏠 メニューにもどる
+    </button>
+
+  </div>
+
+
+  <script>
+    function goBackMenu(){
+
+      const params =
+        new URLSearchParams(window.location.search);
+
+      const from =
+        params.get("from");
+
+      if(from === "set"){
+
+        location.href =
+          "anshin-set-menu.html";
+
+      }else{
+
+        location.href =
+          "watashi-menu.html";
+
+      }
+    }
+  </script>
+
+</body>
+</html>
