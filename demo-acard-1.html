@@ -1,0 +1,214 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">
+
+  <meta
+    name="viewport"
+    content="width=device-width, initial-scale=1.0"
+  >
+
+  <title>安心にもどるカード1枚引き｜Demo</title>
+
+  <style>
+    *{
+      box-sizing:border-box;
+    }
+
+    body{
+      margin:0;
+      padding:20px 14px 40px;
+      font-family:
+        "Hiragino Kaku Gothic ProN",
+        "Yu Gothic",
+        sans-serif;
+      text-align:center;
+      color:#5b3a1e;
+      background:
+        linear-gradient(
+          180deg,
+          #f7fffc 0%,
+          #eef7ff 100%
+        );
+    }
+
+    .main-card{
+      width:94%;
+      max-width:620px;
+      margin:0 auto;
+      padding:22px 14px 28px;
+      background:rgba(255,255,255,0.95);
+      border-radius:28px;
+      box-shadow:
+        0 6px 18px rgba(0,0,0,0.08);
+    }
+
+    h1{
+      margin:0 0 12px;
+      color:#6b4b2a;
+      font-size:28px;
+      line-height:1.45;
+    }
+
+    .intro{
+      margin:0 auto 18px;
+      color:#7b5b39;
+      font-size:16px;
+      line-height:1.7;
+    }
+
+    .demo-box{
+      width:94%;
+      max-width:500px;
+      margin:0 auto 18px;
+      padding:10px;
+      background:#ffffff;
+      border-radius:22px;
+      box-shadow:
+        0 6px 16px rgba(0,0,0,0.10);
+    }
+
+    .demo-image{
+      display:block;
+      width:100%;
+      height:auto;
+      border-radius:16px;
+    }
+
+    .note-box{
+      width:94%;
+      max-width:500px;
+      margin:16px auto;
+      padding:14px 16px;
+      background:#fff8dc;
+      border-radius:20px;
+      color:#80684d;
+      font-size:15px;
+      line-height:1.75;
+    }
+
+    button{
+      width:90%;
+      max-width:340px;
+      margin:8px auto 0;
+      padding:15px 18px;
+      border:none;
+      border-radius:30px;
+      color:white;
+      font-size:17px;
+      font-weight:bold;
+      cursor:pointer;
+      box-shadow:
+        0 4px 12px rgba(0,0,0,0.08);
+    }
+
+    button:active{
+      transform:scale(0.98);
+    }
+
+    .btn-back{
+      background:
+        linear-gradient(
+          135deg,
+          #8fd8c8,
+          #9fc8ff,
+          #b9afea
+        );
+    }
+
+    .btn-home{
+      background:
+        linear-gradient(
+          135deg,
+          #d9b4d8,
+          #b9addf,
+          #9eb8e8
+        );
+    }
+
+    @media(max-width:480px){
+
+      body{
+        padding:16px 10px 32px;
+      }
+
+      .main-card{
+        width:96%;
+        padding:20px 10px 24px;
+      }
+
+      h1{
+        font-size:24px;
+      }
+
+      .intro{
+        font-size:15px;
+      }
+
+      .note-box{
+        font-size:14px;
+      }
+
+      button{
+        width:94%;
+        font-size:16px;
+      }
+    }
+  </style>
+</head>
+
+<body>
+
+  <div class="main-card">
+
+    <h1>
+      🌿 安心にもどるカード<br>
+      1枚引き Demo
+    </h1>
+
+    <p class="intro">
+      本番では、今の気持ちに寄り添いながら<br>
+      カードを1枚引いて<br>
+      安心にもどるヒントを受け取ります😊
+    </p>
+
+
+    <div class="demo-box">
+
+      <img
+        src="images/Demo-acard-1.png"
+        alt="安心にもどるカード1枚引き 紹介用Demo画面"
+        class="demo-image"
+      >
+
+    </div>
+
+
+    <div class="note-box">
+      🌿 こちらは紹介用Demo画面です。<br>
+      本番では、実際にカードを引いて<br>
+      今の気持ちに合ったメッセージを受け取れます😊
+    </div>
+
+
+    <button
+      class="btn-back"
+      type="button"
+      onclick="history.back()"
+    >
+      🌿 安心にもどる画面にもどる
+    </button>
+
+
+    <button
+      class="btn-home"
+      type="button"
+      onclick="location.href='index.html'"
+    >
+      🏠 Demoメニューにもどる
+    </button>
+
+  </div>
+
+</body>
+</html>
