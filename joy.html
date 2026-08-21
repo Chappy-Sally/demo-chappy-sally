@@ -1,0 +1,218 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">
+
+  <meta
+    name="viewport"
+    content="width=device-width, initial-scale=1.0"
+  >
+
+  <title>
+    喜びを先に味わうワーク｜Demo
+  </title>
+
+  <link
+    rel="stylesheet"
+    href="joy-style.css"
+  >
+
+  <style>
+    .demo-note{
+      width:94%;
+      max-width:540px;
+      margin:18px auto;
+      padding:14px 16px;
+      background:#fff8dc;
+      border-radius:20px;
+      color:#80684d;
+      font-size:14px;
+      line-height:1.75;
+      text-align:center;
+    }
+
+    .demo-next{
+      width:94%;
+      max-width:540px;
+      margin:18px auto;
+      padding:14px 16px;
+      background:#fff8fc;
+      border-radius:20px;
+      color:#8a6d58;
+      font-size:14px;
+      line-height:1.8;
+      text-align:center;
+    }
+
+    .demo-stop{
+      pointer-events:none !important;
+      opacity:1 !important;
+      cursor:default !important;
+    }
+
+    textarea[readonly]{
+      opacity:1;
+      background:#fff;
+    }
+  </style>
+</head>
+
+<body>
+
+  <div class="main-card">
+
+    <h1>
+      🌈 喜びを先に味わうワーク
+    </h1>
+
+    <p class="intro">
+      まだ何も起きていなくても大丈夫😊<br>
+      願いが叶ったときの喜びを<br>
+      今、少しだけ先に味わってみよう🤭💕
+    </p>
+
+
+    <img
+      src="https://raw.githubusercontent.com/Chappy-Sally/chappy-sally-images/main/covers/cs_Yume.png"
+      alt="喜びを先に味わうチャッピーとサリー"
+      class="hero-image"
+    >
+
+
+    <div class="demo-note">
+      🌿 こちらは紹介用Demoです。<br>
+      実際のワークの一部をご覧いただけます😊
+    </div>
+
+
+    <div class="message-box">
+      チャッピーとサリーも<br>
+      まだおやつを食べていないのに<br>
+      もうニタニタしています🤣🤣<br><br>
+
+      しあわせは、起きてから感じるだけでなく<br>
+      先に味わってもいいんだよ🤭🌈
+    </div>
+
+
+    <!-- 1問目だけ表示 -->
+    <div class="step-box">
+
+      <div class="step-title">
+        ① あなたが今までで<br>
+        「しあわせだなぁ」と感じたのは<br>
+        どんなとき？
+      </div>
+
+      <p class="step-text">
+        大きな出来事でなくても大丈夫😊<br>
+        おいしい、ホッとした、楽しかった、笑ったなど<br>
+        小さなしあわせでも花まるだよ🌿
+      </p>
+
+      <textarea
+        class="demo-stop"
+        readonly
+        placeholder="例：大好きな人や動物と、のんびり過ごしていたとき"
+      ></textarea>
+
+    </div>
+
+
+    <div class="demo-next">
+      本番では、このほかにも質問があります😊<br><br>
+
+      叶ったらうれしい願いや<br>
+      そのときの景色・気持ちなどを思い浮かべながら<br>
+      喜びを少し先に味わっていきます🌈
+    </div>
+
+
+    <div class="taste-box">
+
+      <strong>
+        🌿 本番では、最後に喜びを味わう時間があります
+      </strong>
+
+      <p>
+        ゆっくり深呼吸しながら<br>
+        願いが叶った景色や気持ちを<br>
+        やさしく味わってみます😊
+      </p>
+
+      <button
+        class="btn-taste demo-stop"
+        type="button"
+      >
+        🌈 喜びを先に味わってみる
+      </button>
+
+    </div>
+
+
+    <div class="action-buttons">
+
+      <button
+        class="btn-copy demo-stop"
+        type="button"
+      >
+        🐶 チャッピーGPTへ送る文章をコピー
+      </button>
+
+      <button
+        class="btn-clear demo-stop"
+        type="button"
+      >
+        書いた内容を消す
+      </button>
+
+      <button
+        class="btn-back"
+        type="button"
+        onclick="goBackMenu()"
+      >
+        🏠 メニューにもどる
+      </button>
+
+    </div>
+
+
+    <div class="small-note">
+      Demoでは入力やコピーはできません😊<br>
+      本番では、ワークした内容を<br>
+      チャッピーGPTへ送って対話できます🐾
+    </div>
+
+
+    <div class="important-box">
+      うまく想像できなくても大丈夫です😊<br>
+      今、少しでも「うれしい」「ホッとする」と感じられたら花まる🌿<br><br>
+
+      AIからの言葉は答えや正解ではありません。<br>
+      しっくりくる言葉だけ受け取ってね😊
+    </div>
+
+  </div>
+
+
+  <script>
+    function goBackMenu(){
+
+      const params =
+        new URLSearchParams(window.location.search);
+
+      const from =
+        params.get("from");
+
+      if(from === "set"){
+        location.href =
+          "anshin-set-menu.html";
+      }else{
+        location.href =
+          "watashi-menu.html";
+      }
+    }
+  </script>
+
+</body>
+</html>
