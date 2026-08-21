@@ -8,7 +8,7 @@
     content="width=device-width, initial-scale=1.0"
   >
 
-  <title>チャッピー＆サリーの私にもどる対話ナビ</title>
+  <title>チャッピー＆サリーの私にもどる対話ナビ｜Demo</title>
 
   <style>
     *{
@@ -137,61 +137,80 @@
     }
 
     .btn-role{
-  background:linear-gradient(
-    135deg,
-    #d7a6e8,
-    #b99be8,
-    #8fa9e8
-  );
+      background:linear-gradient(
+        135deg,
+        #d7a6e8,
+        #b99be8,
+        #8fa9e8
+      );
     }
 
     .btn-rule{
-  background:linear-gradient(
-    135deg,
-    #b9d7a8,
-    #9fcfb4,
-    #9eb8e8
-  );
+      background:linear-gradient(
+        135deg,
+        #b9d7a8,
+        #9fcfb4,
+        #9eb8e8
+      );
     }
 
     .btn-child{
-  background:linear-gradient(
-    135deg,
-    #e7b3c8,
-    #c7a9e8,
-    #9eb8e8
-  );
-}
+      background:linear-gradient(
+        135deg,
+        #e7b3c8,
+        #c7a9e8,
+        #9eb8e8
+      );
+    }
 
-.btn-joy{
-  background:linear-gradient(
-    135deg,
-    #f6c86f,
-    #f2a0b9,
-    #b59ce8
-  );
-}
+    .btn-joy{
+      background:linear-gradient(
+        135deg,
+        #f6c86f,
+        #f2a0b9,
+        #b59ce8
+      );
+    }
 
     .guide-btn{
-  margin-top:10px;
-}
+      margin-top:10px;
+    }
 
-.guide-image-wrap{
-  width:78%;
-  max-width:380px;
-  margin:14px auto 0;
-  padding:8px;
-  background:rgba(255,255,255,0.9);
-  border-radius:20px;
-  box-shadow:0 6px 16px rgba(0,0,0,0.08);
-}
+    /* スクショ表示部分 */
+    .demo-image-wrap{
+      width:88%;
+      max-width:420px;
+      margin:16px auto 4px;
+      padding:8px;
+      background:rgba(255,255,255,0.95);
+      border-radius:20px;
+      box-shadow:0 6px 16px rgba(0,0,0,0.10);
+      display:none;
+    }
 
-.guide-image{
-  display:block;
-  width:100%;
-  height:auto;
-  border-radius:14px;
-}
+    .demo-image{
+      display:block;
+      width:100%;
+      height:auto;
+      border-radius:14px;
+    }
+
+    .guide-image-wrap{
+      width:78%;
+      max-width:380px;
+      margin:14px auto 0;
+      padding:8px;
+      background:rgba(255,255,255,0.9);
+      border-radius:20px;
+      box-shadow:0 6px 16px rgba(0,0,0,0.08);
+    }
+
+    .guide-image{
+      display:block;
+      width:100%;
+      height:auto;
+      border-radius:14px;
+    }
 
     .important-box{
       width:94%;
@@ -236,11 +255,14 @@
         font-size:16px;
       }
 
-   .guide-image-wrap{
-  width:84%;
-  max-width:340px;
-   }
-      
+      .guide-image-wrap{
+        width:84%;
+        max-width:340px;
+      }
+
+      .demo-image-wrap{
+        width:94%;
+      }
     }
   </style>
 </head>
@@ -254,8 +276,6 @@
       私にもどる対話ナビ🌿
     </h1>
 
-    
-
     <p class="desc">
       カードとチャッピーとの対話を通して<br>
       今の気持ちをやさしく整理しながら<br>
@@ -263,10 +283,11 @@
     </p>
 
     <img
-  src="images/cs_Demo.png"
-  class="hero-img"
-  alt="Demoメニュー画像"
->
+      src="images/cs_Demo.png"
+      class="hero-img"
+      alt="Demoメニュー画像"
+    >
+
 
     <!-- 1. 私にもどる対話ナビ -->
     <div class="guide-box">
@@ -280,105 +301,130 @@
         カードからやさしいヒントを受け取ります😊
       </div>
 
-    <button
-  class="btn-tarot"
-  onclick="location.href='tarot.html'"
->
-  タロットカードを引いてみよう
-    </button>
-      
+      <button
+        class="btn-tarot"
+        onclick="location.href='tarot.html'"
+      >
+        タロットカードを引いてみよう
+      </button>
+
     </div>
 
-    <!-- 5. 私が勝手に設定した役割 -->
-<div class="guide-box">
 
-  <div class="guide-title">
-    🎭 私が勝手に設定した役割
-  </div>
+    <!-- 2. 私が勝手に設定した役割 -->
+    <div class="guide-box">
 
-  <div class="guide-text">
-    父・母・夫・子ども・上司などに<br>
-    無意識に決めていた役割に気づいて<br>
-    別の視点から関係を見てみよう😊
-  </div>
+      <div class="guide-title">
+        🎭 私が勝手に設定した役割
+      </div>
 
-  <button
-    class="btn-role"
-    onclick="location.href='roles.html'"
-  >
-    私が設定した役割を見てみる
-  </button>
+      <div class="guide-text">
+        父・母・夫・子ども・上司などに<br>
+        無意識に決めていた役割に気づいて<br>
+        別の視点から関係を見てみよう😊
+      </div>
 
-</div>
+      <button
+        class="btn-role"
+        onclick="location.href='roles.html'"
+      >
+        私が設定した役割を見てみる
+      </button>
 
-    <!-- 私のマイルールを見てみよう -->
-<div class="guide-box">
-
-  <div class="guide-title">
-    🌿 私のマイルールを見てみよう
-  </div>
-
-  <div class="guide-text">
-    自分の「ダメかも」と思うところから<br>
-    いつの間にか自分に決めていた<br>
-    「こうあるべき」に気づいてみよう😊
-  </div>
-
-  <button
-    class="btn-rule"
-    onclick="location.href='my-rule.html'"
-  >
-    私のマイルールを見てみる
-  </button>
-
-</div>
-
-  <!-- あの頃の私に会いに行く -->
-<div class="guide-box">
-
-  <div class="guide-title">
-    🌿 あの頃の私に会いに行こう
-  </div>
-
-  <div class="guide-text">
-    過去の自分の気持ちに気づいて<br>
-    今の自分から「大丈夫だよ」と<br>
-    やさしく声をかけてみよう😊
-  </div>
-
-  <button
-    class="btn-child"
-    onclick="location.href='child.html'"
-  >
-    あの頃の私に会いに行く
-  </button>
-
-</div>
+    </div>
 
 
-<!-- 喜びを先に味わう -->
-<div class="guide-box">
+    <!-- 3. 私のマイルール -->
+    <div class="guide-box">
 
-  <div class="guide-title">
-    🌈 喜びを先に味わうワーク
-  </div>
+      <div class="guide-title">
+        🌿 私のマイルールを見てみよう
+      </div>
 
-  <div class="guide-text">
-    願いが叶ったときの景色や気持ちを思い浮かべて<br>
-    その喜びを今、少しだけ先に味わってみよう🤭💕
-  </div>
+      <div class="guide-text">
+        自分の「ダメかも」と思うところから<br>
+        いつの間にか自分に決めていた<br>
+        「こうあるべき」に気づいてみよう😊
+      </div>
 
-  <button
-    class="btn-joy"
-    onclick="location.href='joy.html'"
-  >
-    喜びを先に味わってみる
-  </button>
+      <button
+        class="btn-rule"
+        onclick="location.href='my-rule.html'"
+      >
+        私のマイルールを見てみる
+      </button>
 
-</div>
-    
+    </div>
 
-    <!-- 2. チャッピーGPT -->
+
+    <!-- 4. あの頃の私 -->
+    <div class="guide-box">
+
+      <div class="guide-title">
+        🌿 あの頃の私に会いに行こう
+      </div>
+
+      <div class="guide-text">
+        過去の自分の気持ちに気づいて<br>
+        今の自分から「大丈夫だよ」と<br>
+        やさしく声をかけてみよう😊
+      </div>
+
+      <button
+        class="btn-child"
+        onclick="toggleDemoImage('omoideDemo')"
+      >
+        あの頃の私に会いに行く
+      </button>
+
+      <div
+        id="omoideDemo"
+        class="demo-image-wrap"
+      >
+        <img
+          src="images/demo-omoide.png"
+          alt="あの頃の私 紹介用Demo画面"
+          class="demo-image"
+        >
+      </div>
+
+    </div>
+
+
+    <!-- 5. 喜びを先に味わう -->
+    <div class="guide-box">
+
+      <div class="guide-title">
+        🌈 喜びを先に味わうワーク
+      </div>
+
+      <div class="guide-text">
+        願いが叶ったときの景色や気持ちを思い浮かべて<br>
+        その喜びを今、少しだけ先に味わってみよう🤭💕
+      </div>
+
+      <button
+        class="btn-joy"
+        onclick="toggleDemoImage('joyDemo')"
+      >
+        喜びを先に味わってみる
+      </button>
+
+      <div
+        id="joyDemo"
+        class="demo-image-wrap"
+      >
+        <img
+          src="images/demo-joy.png"
+          alt="喜びを先に味わう 紹介用Demo画面"
+          class="demo-image"
+        >
+      </div>
+
+    </div>
+
+
+    <!-- 6. チャッピーGPT -->
     <div class="guide-box">
 
       <div class="guide-title">
@@ -392,34 +438,46 @@
 
       <button
         class="btn-chappy"
-        onclick="openChappyGPT()"
+        onclick="toggleDemoImage('chappyDemo')"
       >
         チャッピーGPTと話す
       </button>
 
-     <button
-  class="btn-chappy guide-btn"
-  onclick="toggleChappyGuide()"
->
-  🐾 チャッピーGPTの使い方
-</button>
+      <div
+        id="chappyDemo"
+        class="demo-image-wrap"
+      >
+        <img
+          src="images/demo-chappy.png"
+          alt="チャッピーGPT 紹介用Demo画面"
+          class="demo-image"
+        >
+      </div>
 
-<div
-  id="chappyGuide"
-  class="guide-image-wrap"
-  style="display:none;"
->
-  <img
-    src="https://raw.githubusercontent.com/Chappy-Sally/chappy-sally-images/main/covers/cs_tukaikata_c.png"
-    alt="チャッピーGPTの使い方"
-    class="guide-image"
-  >
-</div>
-      
+
+      <button
+        class="btn-chappy guide-btn"
+        onclick="toggleChappyGuide()"
+      >
+        🐾 チャッピーGPTの使い方
+      </button>
+
+      <div
+        id="chappyGuide"
+        class="guide-image-wrap"
+        style="display:none;"
+      >
+        <img
+          src="https://raw.githubusercontent.com/Chappy-Sally/chappy-sally-images/main/covers/cs_tukaikata_c.png"
+          alt="チャッピーGPTの使い方"
+          class="guide-image"
+        >
+      </div>
+
     </div>
 
 
-    <!-- 3. 深呼吸 -->
+    <!-- 7. 深呼吸 -->
     <div class="guide-box">
 
       <div class="guide-title">
@@ -433,15 +491,26 @@
 
       <button
         class="btn-breath"
-        onclick="location.href='shinkokyu.html'"
+        onclick="toggleDemoImage('breathDemo')"
       >
         深呼吸してみよう
       </button>
 
+      <div
+        id="breathDemo"
+        class="demo-image-wrap"
+      >
+        <img
+          src="images/demo-shinkokyu.png"
+          alt="深呼吸 紹介用Demo画面"
+          class="demo-image"
+        >
+      </div>
+
     </div>
 
 
-    <!-- 4. しあわせスイッチ -->
+    <!-- 8. しあわせスイッチ -->
     <div class="guide-box">
 
       <div class="guide-title">
@@ -455,11 +524,28 @@
 
       <button
         class="btn-switch"
-        onclick="location.href='switch.html'"
+        onclick="toggleDemoImage('switchDemo')"
       >
         しあわせスイッチを押す
       </button>
 
+      <div
+        id="switchDemo"
+        class="demo-image-wrap"
+      >
+        <img
+          src="images/demo-switch.png"
+          alt="しあわせスイッチ 紹介用Demo画面"
+          class="demo-image"
+        >
+      </div>
+
+    </div>
+
+
+    <div class="important-box">
+      🌿 こちらは紹介用Demoです。<br>
+      一部の画面や使い方をご覧いただけます😊
     </div>
 
 
@@ -473,35 +559,51 @@
 
 
   <script>
-    function openChappyGPT(){
-      const chappyGptUrl =
-        "https://chatgpt.com/g/g-6a521739bdc08191be5387b1993ba520-tiyatuhigpt";
 
-      window.open(
-        chappyGptUrl,
-        "_blank",
-        "noopener,noreferrer"
-      );
+    function toggleDemoImage(id){
+
+      const target =
+        document.getElementById(id);
+
+      if(target.style.display === "block"){
+
+        target.style.display = "none";
+
+      }else{
+
+        target.style.display = "block";
+
+        target.scrollIntoView({
+          behavior:"smooth",
+          block:"center"
+        });
+
+      }
     }
+
 
     function toggleChappyGuide(){
-  const guide =
-    document.getElementById("chappyGuide");
 
-  if(guide.style.display === "none"){
-    guide.style.display = "block";
+      const guide =
+        document.getElementById("chappyGuide");
 
-    guide.scrollIntoView({
-      behavior:"smooth",
-      block:"start"
-    });
-  }else{
-    guide.style.display = "none";
-  }
+      if(guide.style.display === "none"){
+
+        guide.style.display = "block";
+
+        guide.scrollIntoView({
+          behavior:"smooth",
+          block:"center"
+        });
+
+      }else{
+
+        guide.style.display = "none";
+
+      }
     }
-    
+
   </script>
 
 </body>
 </html>
-
