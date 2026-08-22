@@ -339,32 +339,22 @@
     <div class="button-group">
 
       <button
-        class="save-btn demo-stop"
+        class="save-btn"
         type="button"
+        onclick="goBackCard()"
       >
         🌈 思い出したことを保存して<br>
         カードへ進む
       </button>
 
       <button
-        class="skip-btn demo-stop"
+        class="skip-btn"
         type="button"
+        onclick="goBackCard()"
       >
         🌿 今は思い出さないので<br>
         そのままカードへ進む
-      </button>
-
-    </div>
-
-    <div class="button-group">
-
-      <button
-        class="back-btn"
-        type="button"
-        onclick="goBackMenu()"
-      >
-        🏠 メニューにもどる
-      </button>
+       </button>
 
     </div>
 
@@ -387,6 +377,22 @@
           "anshin-menu.html";
       }
     }
+    
+  function goBackCard(){
+
+    const params =
+      new URLSearchParams(window.location.search);
+
+    const from =
+      params.get("from");
+
+    if(from === "set"){
+      location.href = "boss-anshin.html?from=set";
+    }else{
+      location.href = "boss-anshin.html";
+    }
+  }
+    
   </script>
 
 </body>
