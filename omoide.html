@@ -2,9 +2,13 @@
 <html lang="ja">
 <head>
   <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-  <title>やさしい思い出ナビ</title>
+  <meta
+    name="viewport"
+    content="width=device-width, initial-scale=1.0"
+  >
+
+  <title>やさしい思い出ナビ｜Demo</title>
 
   <style>
     *{
@@ -18,6 +22,15 @@
       color:#6b4b2a;
       margin:0;
       padding:20px 12px 40px;
+    }
+
+    .omoide-img{
+      width:90%;
+      max-width:500px;
+      border-radius:24px;
+      margin:16px auto 22px;
+      display:block;
+      box-shadow:0 8px 18px rgba(0,0,0,0.12);
     }
 
     .main-card{
@@ -44,7 +57,8 @@
       color:#7b5b39;
     }
 
-    .soft-note{
+    .soft-note,
+    .demo-note{
       width:94%;
       max-width:520px;
       margin:0 auto 16px;
@@ -54,6 +68,11 @@
       color:#8a6d48;
       font-size:14px;
       line-height:1.7;
+    }
+
+    .demo-note{
+      margin-top:16px;
+      background:#fff8fc;
     }
 
     .input-box{
@@ -101,7 +120,6 @@
       font-size:16px;
       line-height:1.55;
       text-align:left;
-      cursor:pointer;
     }
 
     .check-item input[type="checkbox"]{
@@ -128,7 +146,12 @@
       font-family:inherit;
       font-size:16px;
       line-height:1.6;
-      resize:vertical;
+      resize:none;
+    }
+
+    textarea[readonly]{
+      background:#fff;
+      opacity:1;
     }
 
     .button-group{
@@ -181,6 +204,12 @@
       );
     }
 
+    .demo-stop{
+      pointer-events:none;
+      opacity:1;
+      cursor:default;
+    }
+
     @media(max-width:480px){
       h1{
         font-size:23px;
@@ -211,6 +240,12 @@
       🌱 やさしい思い出ナビ 🌱
     </h1>
 
+    <img
+      src="https://raw.githubusercontent.com/Chappy-Sally/chappy-sally-images/main/covers/CS_omoide.png"
+      class="omoide-img"
+      alt="安心して思い出す時間"
+    >
+
     <p class="desc">
       今の気持ちにつながるようなことを<br>
       もし思い出したら、教えてね😊
@@ -222,6 +257,10 @@
       今のあなたが受け取れる範囲で十分だよ😊
     </div>
 
+    <div class="demo-note">
+      🌿 こちらは紹介用Demoです。<br>
+      実際のワークの一部をご覧いただけます😊
+    </div>
 
     <div class="input-box">
 
@@ -230,87 +269,40 @@
       </div>
 
       <p class="input-note">
-        いくつ選んでも大丈夫です🌈
+        本番では、いくつ選んでも大丈夫です🌈
       </p>
 
       <div class="check-list">
 
-        <label class="check-item">
+        <label class="check-item demo-stop">
           <input
             type="checkbox"
-            class="memory-check"
-            value="子どもの頃のことで思い出したことがある"
+            disabled
           >
-          <span>子どもの頃のことで思い出したことがある</span>
+          <span>
+            子どもの頃のことで思い出したことがある
+          </span>
         </label>
 
-        <label class="check-item">
+        <label class="check-item demo-stop">
           <input
             type="checkbox"
-            class="memory-check"
-            value="お父さんとのことで心に残っていることがある"
+            disabled
           >
-          <span>お父さんとのことで心に残っていることがある</span>
-        </label>
-
-        <label class="check-item">
-          <input
-            type="checkbox"
-            class="memory-check"
-            value="お母さんとのことで心に残っていることがある"
-          >
-          <span>お母さんとのことで心に残っていることがある</span>
-        </label>
-
-        <label class="check-item">
-          <input
-            type="checkbox"
-            class="memory-check"
-            value="子どもの頃によく言われていた言葉を思い出した"
-          >
-          <span>子どもの頃によく言われていた言葉を思い出した</span>
-        </label>
-
-        <label class="check-item">
-          <input
-            type="checkbox"
-            class="memory-check"
-            value="先生や周りの大人から言われた言葉を思い出した"
-          >
-          <span>先生や周りの大人から言われた言葉を思い出した</span>
-        </label>
-
-        <label class="check-item">
-          <input
-            type="checkbox"
-            class="memory-check"
-            value="我慢しなきゃと思った出来事に心当たりがある"
-          >
-          <span>我慢しなきゃと思った出来事に心当たりがある</span>
-        </label>
-
-        <label class="check-item">
-          <input
-            type="checkbox"
-            class="memory-check"
-            value="ちゃんとしなきゃと思ったきっかけに心当たりがある"
-          >
-          <span>ちゃんとしなきゃと思ったきっかけに心当たりがある</span>
-        </label>
-
-        <label class="check-item">
-          <input
-            type="checkbox"
-            class="memory-check"
-            value="本当はかけてほしかった言葉がある"
-          >
-          <span>本当はかけてほしかった言葉がある</span>
+          <span>
+            お父さんとのことで心に残っていることがある
+          </span>
         </label>
 
       </div>
 
     </div>
 
+    <div class="demo-note">
+      本番では、このほかにも質問があります😊<br>
+      思い出したことや、心に残っている言葉などを<br>
+      やさしく見つけていきます🌿
+    </div>
 
     <div class="input-box">
 
@@ -323,26 +315,25 @@
       </p>
 
       <textarea
-        id="memoryText"
+        readonly
         placeholder="例：子どもの頃、よく「ちゃんとしなさい」と言われていた気がする"
       ></textarea>
 
     </div>
 
-
     <div class="button-group">
 
       <button
-        class="save-btn"
-        onclick="saveMemoryAndContinue()"
+        class="save-btn demo-stop"
+        type="button"
       >
         🌈 思い出したことを保存して<br>
         カードへ進む
       </button>
 
       <button
-        class="skip-btn"
-        onclick="skipMemory()"
+        class="skip-btn demo-stop"
+        type="button"
       >
         🌿 今は思い出さないので<br>
         そのままカードへ進む
@@ -350,99 +341,37 @@
 
     </div>
 
-
     <div class="button-group">
 
       <button
         class="back-btn"
-        onclick="location.href='index.html'"
+        type="button"
+        onclick="goBackMenu()"
       >
-        🏠 安心ナビに戻る
+        🏠 メニューにもどる
       </button>
 
     </div>
 
   </div>
 
-
   <script>
-    function collectMemoryChecks(){
-      const selected = [];
+    function goBackMenu(){
 
-      document
-        .querySelectorAll(".memory-check:checked")
-        .forEach((checkbox) => {
-          selected.push(checkbox.value);
-        });
+      const params =
+        new URLSearchParams(window.location.search);
 
-      return selected;
-    }
+      const from =
+        params.get("from");
 
-
-    function saveMemoryAndContinue(){
-      const selected = collectMemoryChecks();
-
-      const memoryText =
-        document
-          .getElementById("memoryText")
-          .value
-          .trim();
-
-      if(selected.length === 0 && !memoryText){
-        const continueWithoutWriting =
-          confirm(
-            "今は思い出さなくても大丈夫です😊\nそのままカードへ進みますか？"
-          );
-
-        if(!continueWithoutWriting){
-          return;
-        }
+      if(from === "set"){
+        location.href =
+          "anshin-set-menu.html";
+      }else{
+        location.href =
+          "anshin-menu.html";
       }
-
-      localStorage.setItem(
-        "memoryChecks",
-        JSON.stringify(selected)
-      );
-
-      localStorage.setItem(
-        "memoryText",
-        memoryText
-      );
-
-      location.href = "boss-anshin.html";
     }
-
-
-    function skipMemory(){
-      localStorage.removeItem("memoryChecks");
-      localStorage.removeItem("memoryText");
-
-      location.href = "boss-anshin.html";
-    }
-
-
-    function loadSavedMemory(){
-      const savedChecks =
-        JSON.parse(
-          localStorage.getItem("memoryChecks") || "[]"
-        );
-
-      document
-        .querySelectorAll(".memory-check")
-        .forEach((checkbox) => {
-          checkbox.checked =
-            savedChecks.includes(checkbox.value);
-        });
-
-      document.getElementById("memoryText").value =
-        localStorage.getItem("memoryText") || "";
-    }
-
-
-    window.addEventListener(
-      "DOMContentLoaded",
-      loadSavedMemory
-    );
   </script>
 
 </body>
