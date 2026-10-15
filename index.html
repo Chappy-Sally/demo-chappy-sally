@@ -58,6 +58,10 @@
     .hero-image {
       width: 100%;
       display: block;
+      aspect-ratio: 3 / 2;
+      height: auto;
+      object-fit: cover;
+      object-position: center;
       border-radius: 22px;
       box-shadow:
         0 6px 18px rgba(110, 80, 60, 0.10);
@@ -113,7 +117,17 @@
 
     .demo-title {
       display: block;
-      font-size: 1.12rem;
+      font-size: clamp(0.9rem, 3.6vw, 1.12rem);
+    }
+
+    .demo-title-line {
+      display: block;
+      white-space: nowrap;
+    }
+
+    .demo-title--long .demo-title-line:first-child {
+      font-size: clamp(0.68rem, 2.75vw, 0.94rem);
+      letter-spacing: -0.02em;
     }
 
     .demo-sub {
@@ -252,7 +266,8 @@
     class="demo-button"
   >
     <span class="demo-title">
-      🔮 AI×タロット｜役割手放しワークアプリ
+      <span class="demo-title-line">🔮 AI×タロット｜</span>
+      <span class="demo-title-line">役割手放しワークアプリ</span>
     </span>
 
     <span class="demo-sub">
@@ -265,7 +280,8 @@
     class="demo-button"
   >
     <span class="demo-title">
-      🌱 AI×思い込みカード｜思い込み解放ワークアプリ
+      <span class="demo-title-line">🌱 AI×思い込みカード｜</span>
+      <span class="demo-title-line">思い込み解放ワークアプリ</span>
     </span>
 
     <span class="demo-sub">
@@ -277,8 +293,9 @@
     href="anshin-set-menu.html"
     class="demo-button"
   >
-    <span class="demo-title">
-      🌈 AI×タロット＆思い込みカード｜私にもどる総合ワークアプリ
+    <span class="demo-title demo-title--long">
+      <span class="demo-title-line">🌈 AI×タロット＆思い込みカード｜</span>
+      <span class="demo-title-line">私にもどる総合ワークアプリ</span>
     </span>
 
     <span class="demo-sub">
@@ -302,10 +319,6 @@
     </a>
   </div>
 </section>
-
-
-      </div>
-
 
     </main>
 
