@@ -130,6 +130,58 @@
       margin:20px auto 22px;
     }
 
+    /* デモ体験後のご案内 */
+    .next-links {
+      margin-top: 30px;
+      padding-top: 8px;
+      text-align: center;
+    }
+
+    .next-links-title {
+      font-size: 0.98rem;
+      line-height: 1.8;
+      margin: 0 0 16px;
+    }
+
+    .next-links-list {
+      display: grid;
+      gap: 13px;
+    }
+
+    .next-link {
+      display: block;
+      width: 100%;
+      padding: 17px 14px;
+      border-radius: 22px;
+      text-decoration: none;
+      font-weight: bold;
+      font-size: 1rem;
+      line-height: 1.6;
+      color: #6b4537;
+      box-shadow: 0 5px 14px rgba(110, 80, 60, 0.08);
+      transition: transform 0.2s ease, box-shadow 0.2s ease;
+    }
+
+    .next-link--shop {
+      background: #ffe9c8;
+      border: 2px solid #f2d49d;
+    }
+
+    .next-link--menu {
+      background: #eaf7ed;
+      border: 2px solid #bee2c5;
+    }
+
+    .next-link:active {
+      transform: scale(0.98);
+      box-shadow: 0 2px 8px rgba(110, 80, 60, 0.08);
+    }
+
+    .next-link:focus-visible {
+      outline: 3px solid #9973c6;
+      outline-offset: 3px;
+    }
+
     .note {
       margin-top: 26px;
       padding: 16px;
@@ -235,6 +287,21 @@
   </a>
 
 </div>
+
+<section class="next-links" aria-label="デモの次のご案内">
+  <p class="next-links-title">
+    🌸 体験してくれてありがとう💕<br>
+    気になったら、こちらものぞいてみてね😊
+  </p>
+  <div class="next-links-list">
+    <a class="next-link next-link--shop" href="https://ChappySally.base.shop/" target="_blank" rel="noopener noreferrer">
+      🛍️ BASEのアプリ専門店を見る ↗
+    </a>
+    <a class="next-link next-link--menu" href="https://chappy-sally.github.io/chappysally-menu/" target="_blank" rel="noopener noreferrer">
+      🌈 しあわせメニューを見る ↗
+    </a>
+  </div>
+</section>
 
 
       </div>
