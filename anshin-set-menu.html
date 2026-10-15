@@ -14,8 +14,13 @@
   rel="stylesheet"
   href="bossindex.css"
   >
-  <style>.product-title{font-size:clamp(19px,5.2vw,28px);line-height:1.45;margin-bottom:10px;overflow-wrap:break-word;}
-  .product-subtitle{font-size:clamp(13px,3.5vw,16px);white-space:normal;color:#8a6d80;text-align:center;line-height:1.8;margin:0 auto 18px;}</style>
+  <style>
+    .product-title{font-size:clamp(18px,4.9vw,28px);line-height:1.45;margin-bottom:10px;overflow-wrap:break-word;}
+    .product-title-head{font-size:clamp(12px,2.85vw,20px);white-space:nowrap;letter-spacing:-0.02em;}
+    .product-subtitle{font-size:clamp(13px,3.5vw,16px);white-space:normal;color:#8a6d80;text-align:center;line-height:1.8;margin:0 auto 18px;}
+    /* 正方形のDemo表紙の上下余白を隠し、中央のイラストを見せる */
+    .hero-img{aspect-ratio:3 / 2;height:auto;object-fit:cover;object-position:center;}
+  </style>
   
 </head>
 
@@ -23,7 +28,7 @@
 
   <div class="main-card">
 
-    <h1 class="product-title">🌈 AI×タロット＆<br>思い込みカード｜<br>私にもどる総合ワークアプリ</h1>
+    <h1 class="product-title"><span class="product-title-head">🌈 AI×タロット＆思い込みカード｜</span><br>私にもどる総合ワークアプリ</h1>
     <p class="product-subtitle">🐶 チャッピー＆サリーの<br>安心に戻る時間🌿</p>
 
     <p class="desc">
