@@ -179,6 +179,16 @@ button:active{
   line-height:1.65;
 }
 
+.btn-journal{
+  background:linear-gradient(
+    135deg,
+    #55b982,
+    #63c99b,
+    #77d4aa
+  );
+  color:#ffffff;
+}
+
 .btn-role{
   background:linear-gradient(
     135deg,
